@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>8Store</title>
     <!--Bootstrap CSS-->
     <link rel="stylesheet" href="../resources/bootstrap/css/bootstrap.css">
 
@@ -31,7 +31,7 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li><a href="#">Explore</a></li>
-                <li><a href="#">Map</a></li>
+                <li><a href="#map">Map</a></li>
             </ul>
             <form class="navbar-form navbar-left">
                 <div class="form-group">
@@ -150,6 +150,12 @@
     <hr>
 </div>
 
+
+<!--Google Map-->
+
+<div id="map">Loading Map...</div>
+
+<!--Footer-->
 <div id="footer">
     <div class="container-fluid">
         <div class="jumbotron" align="center">
@@ -177,5 +183,54 @@
         });
     });
 </script>
+
+<!--Google Maps script-->
+<script>
+    function initMap() {
+
+        var currentLat = "";
+        var currentLong = "";
+        showDefaultPosition();
+        getLocation();
+
+        function getLocation() {
+            if (navigator.geolocation) {
+
+                navigator.geolocation.getCurrentPosition(showPosition);
+            } else {
+                showDefaultPosition();
+            }
+        }
+        function showDefaultPosition() {
+            var uluru = {lat: 42.697712, lng: 23.321698};
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 11,
+                center: uluru
+            });
+            var marker = new google.maps.Marker({
+                position: uluru,
+                map: map
+            });
+        }
+        function showPosition(position) {
+            var uluru = {lat: position.coords.latitude, lng: position.coords.longitude};
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 11,
+                center: uluru
+            });
+            var marker = new google.maps.Marker({
+                position: uluru,
+                map: map
+            });
+        }
+    }
+</script>
+
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCuNkOoAzGXm2nAzGT2OQ8A5VC5Nldw7NU&callback=initMap">
+</script>
+
+
+
 </body>
 </html>
