@@ -114,7 +114,7 @@ a:hover {
 .hero {
   display: table;
   position: relative;
-  background-image: url(../img/cover.jpg);
+  background-image: url(../img/animals/background.jpg);
   background-size: cover;
   padding: 150px 0;
   color: #fff;
@@ -144,6 +144,7 @@ a:hover {
 
 .hero-brand {
   margin-bottom: 75px;
+  margin-top: -150px;
   display: inline-block;
 }
 
@@ -519,11 +520,16 @@ body.mobile-nav-active #mobile-nav-toggle {
   Features Styling
   ================================================== */
 .features {
-  padding-bottom: 45px;
+  /*padding-bottom: 45px;*/
+    text-align: center;
 }
 
 .features h2 {
+
+    margin-bottom: -5px;
+    margin-top: -2em;
   color: #199EB8;
+
 }
 
 .feature-col {
@@ -978,3 +984,52 @@ body.mobile-nav-active #mobile-nav-toggle {
     padding-right: 30px;
   }
 }
+
+#logo-top{
+  width: 200px;
+  height: 200px;
+}
+
+#home-login-register{
+  margin-top: 5%;
+}
+
+.homepage-btn {
+  width: 100%;
+  margin-top: 5px;
+}
+
+.carousel-block{
+    height: 40em;
+}
+
+.carousel-section {
+    padding: 0;
+}
+
+.carousel-image{
+    height: 28.5em
+}
+
+#map {
+    height: 40em;
+    width: 100%;
+}
+
+/*navbar user info*/
+#navbar-dashboard-btn{
+    border-radius: 5px;
+    background-color: #5cb85c;
+    width: 100%;
+}
+#navbar-logout-btn{
+    border-radius: 5px;
+    background-color: red;
+}
+
+.user-dropdown {
+    text-align: center;
+}
+
+
+/*end of navbar user info*/
