@@ -1,0 +1,27 @@
+
+	*VIEWS*
+(* -> taken) (- -> todo) (+ -> done)
+-Index *
+-Explore Lost *
+-Explore Found *
+-Login *
+-Register *
+-Create Lost Poster -
+-Create Found Poster -
+-Pet details (with comment forms)-
+-Profile page -
+-Admin shit -
+-Edit (pet details, user details) -
+-Map -
+
+___________
+	*Gifs*
+
+https://media.giphy.com/media/bgPIfPVmUVbS8/source.gif
+https://img-s3.onedio.com/id-583e19b5b220daee21ba2ff4/rev-0/raw/s-0f4b32f824d8a3b468ce103035275b1686c22949.gif
+https://media.giphy.com/media/xUA7aWlThT4wQKRJvi/source.gif
+___________
+
+TODO
+
+-fix the carousel arrows
