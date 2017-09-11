@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="row">
+        <div class="offset-lg-5 text-lg-center">
+            <h2>Edit Pet Information</h2>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-3 offset-lg-5 text-left">
+            <h3 class="section-title">Pet name:</h3>
+            <input type="text" name="petName"><br><br>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3 offset-lg-5">
+            <img class="already-avatar" id="petImg" src="../img/emptyAvatar.jpg" width="186px" height="236px"/>
+            <label for="petAvatarBtn">Change pet's avatar</label><br>
+            <input id="petAvatarBtn" type="file" required>
+            <br><br>
+            <h3>Pet Description:</h3>
+            <textarea class="form-control" rows="3" id="petDescription"></textarea><br>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3 offset-lg-3">
+            <h3>Last seen location:</h3>
+            <div class="container-fluid">
+
+                <!--Google Map-->
+
+                <div id="map" style="margin-left:-14px;width:600px;height:300px;">Loading Map...</div><br>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="offset-lg-4">
+            <button type="submit" class="btn btn-info">Edit</button>
+            <button type="submit" class="btn btn-danger">Delete</button>
+            <button type="submit" class="btn btn-primary">Back</button>
+        </div>
+    </div>
+    <br>
+</div>
