@@ -1,9 +1,9 @@
 {{> welcomeSection}}
 {{> header}}
 
-{{#if loggedIn}}
+{{#unless loggedIn}}
     {{> aboutSection}}
-{{/if}}
+{{/unless}}
 
 {{> lostPetsCarousel}}
 <hr>
@@ -15,5 +15,5 @@
 
 {{> footer}}
 {{> scrollTop}}
-
+{{> scripts}}
 

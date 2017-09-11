@@ -1,0 +1,8 @@
+{
+  "name": "SILMP",
+  "version": "0.0.1",
+  "dependencies": {
+    "handlebars": "^4.0.10",
+    "sammy": "^0.7.6"
+  }
+}
