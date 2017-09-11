@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3 offset-lg-2 text-left">
+            <h4 class="section-title">{PetName}</h4>
+        </div>
+        <div class="col-lg-3 offset-lg-1 text-left">
+            <h4 class="section-title">Owner: {OwnerName}</h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3 offset-lg-2">
+            <img class="already-avatar" id="petImg" src="../img/emptyAvatar.jpg,{{imageData}}" width="186px"    height="236px"/>
+            <br><br>
+            <h3>Animal type:</h3>
+            <p>{type}</p>
+            <h3>Breed:</h3>
+            <p>{breed}</p>
+            <h3>Last seen time:</h3>
+            <p>{time}</p>
+            <h3>Action taken:</h3>
+            <p>{action}</p>
+        </div>
+        <div class="col-lg-3 offset-lg-1">
+            <a href=""><img class="already-avatar" id="ownerImg" src="../img/emptyAvatar.jpg,{{imageData}}" width="186px"    height="236px"/></a>
+            <br><br>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3 offset-lg-2">
+            <h3>Last seen location:</h3>
+            <div class="container-fluid">
+
+                <!--Google Map-->
+
+                <div id="map" style="margin-left:-14px;width:600px;height:300px;">Loading Map...</div>
+            </div>
+        </div>
+    </div><br>
+</div>
