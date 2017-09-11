@@ -1,0 +1,52 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3 offset-lg-2 text-left">
+            <h4 class="section-title">{Username}</h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3 offset-lg-2">
+            <script language="javascript">
+                window.addEventListener('load', function() {
+                    document.querySelector('input[type="file"]').addEventListener('change', function() {
+                        if (this.files && this.files[0]) {
+                            var img = document.querySelector('#myImg');  // $('img')[0]
+                            img.src = URL.createObjectURL(this.files[0]); // set src to file url
+                            img.onload = imageIsLoaded; // optional onload event listener
+                        }
+                    });
+                });
+
+                function imageIsLoaded(e) { alert("Successfully changed avatar."); }
+
+            </script>
+            <img class="already-avatar" id="myImg" src="../img/emptyAvatar.jpg,{{imageData}}" width="186px"    height="236px"/>
+            <br><br>
+            <h4>Change avatar</h4>
+            <input type='file' />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3 offset-lg-2">
+            <div class="info">
+                <div>
+                    <i class="fa fa-map-marker"></i>
+                    <p>Tinityava 15-17<br>Sofia, BG</p>
+                </div>
+
+                <div>
+                    <i class="fa fa-envelope"></i>
+                    <p>depressed.inbox@SILMP.com</p>
+                </div>
+
+                <div>
+                    <i class="fa fa-phone"></i>
+                    <p>+1 2345 666 78s</p>
+                </div>
+                <a href="#" class="fa fa-facebook"></a>
+                <a href="#" class="fa fa-twitter"></a>
+                <a href="#" class="fa fa-skype"></a>
+            </div>
+        </div>
+    </div>
+</div>
