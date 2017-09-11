@@ -1,0 +1,61 @@
+<div class="col-lg-12">
+    <form>
+        <h1>Create poster for found pet</h1>
+        <hr/>
+        <br/>
+        <div class="dropzone">
+            <p>Drag and Drop picture of the pet you have found</p>
+            <div class="posterImage">
+            </div>
+        </div>
+        <br/>
+        <div class="form-group">
+            <label for="petType">What was it?</label>
+            <select class="form-control" id="petType">
+                <option>empty</option>
+                <option>Dog</option>
+                <option>Cat</option>
+                <option>Mouse</option>
+                <option>Elephant</option>
+                <option>Eagle</option>
+            </select>
+        </div>
+        <br/>
+        <div class="form-group">
+            <label for="petBreed">What was it's breed?</label>
+            <select class="form-control" id="petBreed">
+                <option>empty</option>
+                <option>german shepherd</option>
+                <option>bulgarian shepherd</option>
+                <option>shepherd</option>
+                <option>german shepherd</option>
+                <option>german shepherd</option>
+            </select>
+        </div>
+        <br/>
+        <fieldset class="form-group">
+            <label>Gender</label>
+            <div class="form-check">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                    Male
+                </label>
+            </div>
+            <div class="form-check">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="option2">
+                    Female
+                </label>
+            </div>
+        </fieldset>
+        <br/>
+        <div class="form-group">
+            <label for="exampleTextarea">Additional information about your pet.</label>
+            <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+            <small id="emailHelp" class="form-text text-muted">All kinds of distinctive features could help.</small>
+        </div>
+        <br/>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    <br/>
+</div>
