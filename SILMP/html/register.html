@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Shit I Lost My Pet</title>
+    <link rel="icon" href="../img/logo/bone-tab.png">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <!-- Favicon -->
+    <link href="../img/favicon.ico" rel="icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,700|Roboto:400,900" rel="stylesheet">
+
+    <!-- Bootstrap CSS File -->
+    <link href="../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Libraries CSS Files -->
+    <link href="../lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Main Stylesheet File -->
+    <link href="../css/style.css" rel="stylesheet">
+
+
+    <!--login custom style-->
+    <link rel="stylesheet" type="text/css" href="../css/register-styles.css"/>
+
+</head>
+<body>
+
+<!-- Header -->
+<header id="header">
+    <div class="container">
+
+        <div id="logo" class="pull-left">
+            <a href="index.html"><img src="../img/logo/bone-small.png" alt="" title="" /></img></a>
+            <!-- Uncomment below if you prefer to use a text image -->
+            <!--<h1><a href="#hero">Bell</a></h1>-->
+        </div>
+
+        <nav id="nav-menu-container">
+            <ul class="nav-menu">
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#features">Map</a></li>
+                <li><a href="#lostPets">Lost Pets</a></li>
+                <li><a href="#foundPets">Found Pets</a></li>
+                <li class="menu-has-children"><a href="#">Create a Poster</a>
+                    <ul>
+                        <li><a href="#">Lost Pet</a></li>
+                        <li><a href="#">Found Pet</a></li>
+                    </ul>
+                </li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+
+
+        </nav><!-- #nav-menu-container -->
+
+
+
+        <nav class="nav social-nav pull-right hidden-sm-down">
+            <!--<a href="#"><i class="fa fa-twitter"></i></a> <a href="#"><i class="fa fa-facebook"></i></a> <a href="#"><i class="fa fa-linkedin"></i></a> <a href="#"><i class="fa fa-envelope"></i></a>-->
+            <ul class="nav pull-right">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <span class="glyphicon glyphicon-user"></span> 
+                        {DisplayName}
+                        <span class="glyphicon glyphicon-chevron-down"></span>
+                    </a>
+                    <ul class="dropdown-menu user-dropdown">
+                        <li>
+
+                            <div class="col-lg-12"><p><strong>Full Name</strong></p></div>
+
+                        </li>
+                        <li>
+
+                            <div class="col-lg-12"><p>placeholder@gmail.com</p></div>
+
+                        </li>
+                        <li>
+
+                            <button id="navbar-dashboard-btn" type="button" class="btn btn-success col-lg-12">Dashboard</button>
+
+
+                        </li>
+
+                        <li>
+
+                            <button id="navbar-logout-btn" type="button" class="btn btn-danger col-lg-12 navbar-user-btn">Logout</button>
+
+                        </li>
+
+                    </ul>
+                </li>
+            </ul>
+
+
+        </nav>
+
+
+    </div>
+</header><!-- #header -->
+
+<!--login form-->
+<section id="register">
+
+    <div class="container">
+        <!--register form-->
+        <div class="row">
+            <div class="offset-lg-3 col-lg-6 offset-md-2 col-md-8 offset-sm-2 col-sm-8">
+                <form role="form">
+                    <h2>Sign Up Now!
+                    <small class="pull-right"> It's free and always will be!</small></h2>
+                    <span class="pull-right"><em><small>You cheap bastard.</small></em></span>
+                    <br>
+                    <hr class="colorgraph">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6 col-md-6">
+                            <div class="form-group">
+                                <input type="text" name="first_name" id="first_name" class="form-control input-lg" placeholder="First Name" tabindex="1">
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6">
+                            <div class="form-group">
+                                <input type="text" name="last_name" id="last_name" class="form-control input-lg" placeholder="Last Name" tabindex="2">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="display_name" id="display_name" class="form-control input-lg" placeholder="Display Name" tabindex="3">
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" id="email" class="form-control input-lg" placeholder="Email Address" tabindex="4">
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6 col-md-6">
+                            <div class="form-group">
+                                <input type="password" name="password" id="password" class="form-control input-lg" placeholder="Password" tabindex="5">
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6">
+                            <div class="form-group">
+                                <input type="password" name="password_confirmation" id="password_confirmation" class="form-control input-lg" placeholder="Confirm Password" tabindex="6">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <!--<div class="col-xs-4 col-sm-3 col-md-3">-->
+					<!--<span class="button-checkbox">-->
+						<!--<button type="button" class="btn" data-color="info" tabindex="7">I Agree</button>-->
+                        <!--<input type="checkbox" name="t_and_c" id="t_and_c" class="hidden" value="1">-->
+					<!--</span>-->
+                        <!--</div>-->
+                        <div id="register-terms">
+                            By clicking <strong class="label label-primary">Register</strong>, you agree to the <a href="#" data-toggle="modal" data-target="#t_and_c_m">Terms and Conditions</a> set out by this site, including our Cookie Use.
+                        </div>
+                    </div>
+
+                    <hr class="colorgraph">
+                    <div class="row">
+                        <div class="col-xs-12 col-md-6"><input type="submit" value="Register" class="btn btn-primary btn-block btn-lg" tabindex="7"></div>
+                        <div class="col-xs-12 col-md-6"><a href="login.html" class="btn btn-success btn-block btn-lg">Sign In</a></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="t_and_c_m" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        <h4 class="modal-title" id="myModalLabel">Terms & Conditions</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>By accepting these terms and conditions you agree to buy 1 (one) cold beer to each member of team 'Banana'.</p>
+                        <p>If you fail to fulfill these conditions there's nothing we can actually do to you.</p>
+                        <p>We will, however, be very disappointed by you.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button id="agree-btn" type="button" class="btn btn-primary" data-dismiss="modal">I Agree</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+
+
+
+
+
+    </div>
+
+</section>
+
+
+
+
+
+<!--footer-->
+<footer class="site-footer">
+    <div class="bottom">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-6 col-xs-12 text-lg-left text-center">
+                    <p class="copyright-text">
+                        © BELL Theme
+                    </p>
+                    <div class="credits">
+                        <!--
+                        All the links in the footer should remain intact.
+                        You can delete the links only if you purchased the pro version.
+                        Licensing information: https://bootstrapmade.com/license/
+                        Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Bell
+                      -->
+                        <a href="https://bootstrapmade.com/">Bootstrap Themes</a> by BootstrapMade
+                    </div>
+                </div>
+
+                <div class="col-lg-6 col-xs-12 text-lg-right text-center">
+                    <ul class="list-inline">
+                        <li class="list-inline-item">
+                            <a href="index.html">Home</a>
+                        </li>
+
+                        <li class="list-inline-item">
+                            <a href="#about">About Us</a>
+                        </li>
+
+                        <li class="list-inline-item">
+                            <a href="#features">Features</a>
+                        </li>
+
+                        <li class="list-inline-item">
+                            <a href="#portfolio">Portfolio</a>
+                        </li>
+
+                        <li class="list-inline-item">
+                            <a href="#team">Team</a>
+                        </li>
+
+                        <li class="list-inline-item">
+                            <a href="#contact">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</footer>
+<a class="scrolltop" href="#"><span class="fa fa-angle-up"></span></a> <!-- JavaScript
+
+<!-- Required JavaScript Libraries -->
+<script src="../lib/jquery/jquery.min.js"></script>
+<script src="../lib/superfish/hoverIntent.js"></script>
+<script src="../lib/superfish/superfish.min.js"></script>
+<script src="../lib/tether/js/tether.min.js"></script>
+<script src="../lib/stellar/stellar.min.js"></script>
+<script src="../lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="../lib/counterup/counterup.min.js"></script>
+<script src="../lib/waypoints/waypoints.min.js"></script>
+<script src="../lib/easing/easing.js"></script>
+<script src="../lib/stickyjs/sticky.js"></script>
+<script src="../lib/parallax/parallax.js"></script>
+<script src="../lib/lockfixed/lockfixed.min.js"></script>
+
+<!-- Template Specisifc Custom Javascript File -->
+<script src="../js/custom.js"></script>
+</body>
+</html>

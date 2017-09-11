@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Shit I Lost My Pet</title>
+    <link rel="icon" href="../img/logo/bone-tab.png">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <!-- Favicon -->
+    <link href="../img/favicon.ico" rel="icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,700|Roboto:400,900" rel="stylesheet">
+
+    <!-- Bootstrap CSS File -->
+    <link href="../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Libraries CSS Files -->
+    <link href="../lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Main Stylesheet File -->
+    <link href="../css/style.css" rel="stylesheet">
+
+
+    <!--login custom style-->
+    <link rel="stylesheet" type="text/css" href="../css/login-styles.css"/>
+
+</head>
+<body>
+
+<!-- Header -->
+<header id="header">
+    <div class="container">
+
+        <div id="logo" class="pull-left">
+            <a href="index.html"><img src="../img/logo/bone-small.png" alt="" title="" /></img></a>
+            <!-- Uncomment below if you prefer to use a text image -->
+            <!--<h1><a href="#hero">Bell</a></h1>-->
+        </div>
+
+        <nav id="nav-menu-container">
+            <ul class="nav-menu">
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#features">Map</a></li>
+                <li><a href="#lostPets">Lost Pets</a></li>
+                <li><a href="#foundPets">Found Pets</a></li>
+                <li class="menu-has-children"><a href="#">Create a Poster</a>
+                    <ul>
+                        <li><a href="#">Lost Pet</a></li>
+                        <li><a href="#">Found Pet</a></li>
+                    </ul>
+                </li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+
+
+        </nav><!-- #nav-menu-container -->
+
+
+
+        <nav class="nav social-nav pull-right hidden-sm-down">
+            <!--<a href="#"><i class="fa fa-twitter"></i></a> <a href="#"><i class="fa fa-facebook"></i></a> <a href="#"><i class="fa fa-linkedin"></i></a> <a href="#"><i class="fa fa-envelope"></i></a>-->
+            <ul class="nav pull-right">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <span class="glyphicon glyphicon-user"></span> 
+                        {DisplayName}
+                        <span class="glyphicon glyphicon-chevron-down"></span>
+                    </a>
+                    <ul class="dropdown-menu user-dropdown">
+                        <li>
+
+                            <div class="col-lg-12"><p><strong>Full Name</strong></p></div>
+
+                        </li>
+                        <li>
+
+                            <div class="col-lg-12"><p>placeholder@gmail.com</p></div>
+
+                        </li>
+                        <li>
+
+                            <button id="navbar-dashboard-btn" type="button" class="btn btn-success col-lg-12">Dashboard</button>
+
+
+                        </li>
+
+                        <li>
+
+                            <button id="navbar-logout-btn" type="button" class="btn btn-danger col-lg-12 navbar-user-btn">Logout</button>
+
+                        </li>
+
+                    </ul>
+                </li>
+            </ul>
+
+
+        </nav>
+
+
+    </div>
+</header><!-- #header -->
+
+<!--login form-->
+<section id="login">
+
+    <div class="container-fluid">
+
+        <!--form-->
+        <div class="row">
+
+            <div class="main">
+
+                <h3>Please Log In, or <a href="register.html">Sign Up</a></h3>
+                <div class="row">
+                    <div class="col-xs-6 col-sm-6 col-md-6">
+                        <a href="#" class="btn btn-lg btn-primary btn-block">Facebook</a>
+                    </div>
+                    <div class="col-xs-6 col-sm-6 col-md-6">
+                        <a href="#" id="google-login-btn" class="btn btn-lg btn-info btn-block">Google</a>
+                    </div>
+                </div>
+                <div class="login-or">
+                    <hr class="hr-or">
+                    <span class="span-or">or</span>
+                </div>
+
+                <form role="form">
+
+                    <div class="form-group">
+                        <label for="inputUsernameEmail">Username or email</label>
+                        <input type="text" class="form-control" id="inputUsernameEmail">
+                    </div>
+                    <div class="form-group">
+                        <a class="pull-right" href="#">Forgot password?</a>
+                        <label for="inputPassword">Password</label>
+                        <input type="password" class="form-control" id="inputPassword">
+                    </div>
+                    <div class="checkbox pull-right">
+                        <label>
+                            <input type="checkbox">
+                            Remember me </label>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="row">
+                    <button type="submit" id="login-btn" class="btn btn btn-primary offset-4 col-lg-4">
+                        Log In
+                    </button>
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
+
+
+
+
+    </div>
+
+</section>
+
+
+
+
+
+<!--footer-->
+<footer class="site-footer">
+    <div class="bottom">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-6 col-xs-12 text-lg-left text-center">
+                    <p class="copyright-text">
+                        © BELL Theme
+                    </p>
+                    <div class="credits">
+                        <!--
+                        All the links in the footer should remain intact.
+                        You can delete the links only if you purchased the pro version.
+                        Licensing information: https://bootstrapmade.com/license/
+                        Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Bell
+                      -->
+                        <a href="https://bootstrapmade.com/">Bootstrap Themes</a> by BootstrapMade
+                    </div>
+                </div>
+
+                <div class="col-lg-6 col-xs-12 text-lg-right text-center">
+                    <ul class="list-inline">
+                        <li class="list-inline-item">
+                            <a href="index.html">Home</a>
+                        </li>
+
+                        <li class="list-inline-item">
+                            <a href="#about">About Us</a>
+                        </li>
+
+                        <li class="list-inline-item">
+                            <a href="#features">Features</a>
+                        </li>
+
+                        <li class="list-inline-item">
+                            <a href="#portfolio">Portfolio</a>
+                        </li>
+
+                        <li class="list-inline-item">
+                            <a href="#team">Team</a>
+                        </li>
+
+                        <li class="list-inline-item">
+                            <a href="#contact">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</footer>
+<a class="scrolltop" href="#"><span class="fa fa-angle-up"></span></a> <!-- JavaScript
+
+<!-- Required JavaScript Libraries -->
+<script src="../lib/jquery/jquery.min.js"></script>
+<script src="../lib/superfish/hoverIntent.js"></script>
+<script src="../lib/superfish/superfish.min.js"></script>
+<script src="../lib/tether/js/tether.min.js"></script>
+<script src="../lib/stellar/stellar.min.js"></script>
+<script src="../lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="../lib/counterup/counterup.min.js"></script>
+<script src="../lib/waypoints/waypoints.min.js"></script>
+<script src="../lib/easing/easing.js"></script>
+<script src="../lib/stickyjs/sticky.js"></script>
+<script src="../lib/parallax/parallax.js"></script>
+<script src="../lib/lockfixed/lockfixed.min.js"></script>
+
+<!-- Template Specisifc Custom Javascript File -->
+<script src="../js/custom.js"></script>
+</body>
+</html>
