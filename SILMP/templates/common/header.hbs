@@ -1,0 +1,44 @@
+<!-- Header -->
+<header id="header">
+    <div class="container">
+
+        <div id="logo" class="pull-left">
+            <a href="index.html"><img src="../img/logo/bone-small.png" alt="" title="" /></a>
+        </div>
+
+        <nav id="nav-menu-container">
+            <ul class="nav-menu">
+                {{#if loggedIn}}
+                    <li><a href="#features">Map</a></li>
+                    <li><a href="#lostPets">Lost Pets</a></li>
+                    <li><a href="#foundPets">Found Pets</a></li>
+                    <li class="menu-has-children"><a href="#">Create a Poster</a>
+                        <ul>
+                            <li><a href="#">Lost Pet</a></li>
+                            <li><a href="#">Found Pet</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#contact">Contact Us</a></li>
+
+                {{else}}
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#features">Map</a></li>
+                    <li><a href="#lostPets">Lost Pets</a></li>
+                    <li><a href="#foundPets">Found Pets</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                {{/if}}
+            </ul>
+
+        </nav><!-- #nav-menu-container -->
+
+        <nav class="nav social-nav pull-right hidden-sm-down">
+            <!--<a href="#"><i class="fa fa-twitter"></i></a> <a href="#"><i class="fa fa-facebook"></i></a> <a href="#"><i class="fa fa-linkedin"></i></a> <a href="#"><i class="fa fa-envelope"></i></a>-->
+
+            {{#if loggedIn}}
+                {{> userDropDown}}
+            {{else}}
+                {{> enterDropDown}}
+            {{/if}}
+        </nav>
+    </div>
+</header><!-- #header -->
