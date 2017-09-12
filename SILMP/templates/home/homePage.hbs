@@ -1,3 +1,14 @@
+<script src="../lib/superfish/hoverIntent.js"></script>
+<script src="../lib/superfish/superfish.min.js"></script>
+<script src="../lib/tether/js/tether.min.js"></script>
+<script src="../lib/stellar/stellar.min.js"></script>
+<script src="../lib/counterup/counterup.min.js"></script>
+<script src="../lib/waypoints/waypoints.min.js"></script>
+<script src="../lib/easing/easing.js"></script>
+<script src="../lib/stickyjs/sticky.js"></script>
+<script src="../lib/parallax/parallax.js"></script>
+<script src="../lib/lockfixed/lockfixed.min.js"></script>
+
 {{> welcomeSection}}
 {{> header}}
 
@@ -17,3 +28,24 @@
 {{> scrollTop}}
 {{> scripts}}
 
+
+
+<!--Google Maps script-->
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCuNkOoAzGXm2nAzGT2OQ8A5VC5Nldw7NU&callback=initMap">
+</script>
+
+<!--slick-->
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('.pet-carousel').slick({
+            dots: true,
+            infinite: true,
+            speed: 300,
+            slidesToShow: 1,
+            centerMode: true,
+            variableWidth: true,
+            arrows : true
+        });
+    });
+</script>

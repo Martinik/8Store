@@ -1,5 +1,7 @@
 $(() => {
 
+    let shouldInitCustom = true;
+
     const app = Sammy('#mainContent', function () {
 
         this.use('Handlebars', 'hbs');
@@ -128,7 +130,12 @@ $(() => {
                 mapSection: '../templates/home/mapSection.hbs',
                 contactSection: '../templates/home/contactSection.hbs'
             }).then(function () {
-                this.partial('../templates/home/homePage.hbs')
+                this.partial('../templates/home/homePage.hbs').then(function () {
+                    if(shouldInitCustom){
+                        templateCustom();
+                        shouldInitCustom = false;
+                    }
+                })
             })
 
         }
