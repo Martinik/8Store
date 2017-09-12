@@ -8,13 +8,66 @@ $(() => {
         this.get('index.html', displayHome);
         this.get('#/home', displayHome);
 
+        //Login Page
+        this.get('login.html', displayLogin);
+
+        //Register Page
+        this.get('register.html', displayRegister);
+
 
 
 
 
         // functions
 
+        function displayRegister(ctx) {
+            console.log('register routed!');
+            ctx.loggedIn = sessionStorage.getItem('authtoken') !== null;
+            ctx.username = sessionStorage.getItem('username');
+            ctx.firstName = sessionStorage.getItem('firstName');
+            ctx.lastName = sessionStorage.getItem('lastName');
+            ctx.email = sessionStorage.getItem('email');
+
+            ctx.loadPartials({
+                userDropDown: '../templates/common/userDropDown.hbs',
+                enterDropDown: '../templates/common/enterDropDown.hbs',
+                header: '../templates/common/header.hbs',
+                footer: '../templates/common/footer.hbs',
+                scrollTop: '../templates/common/scrollTop.hbs',
+                scripts: '../templates/common/scripts.hbs',
+
+                registerForm: '../templates/register/registerForm.hbs'
+
+            }).then(function () {
+                this.partial('../templates/register/registerPage.hbs')
+            })
+        }
+
+        function displayLogin(ctx) {
+            console.log('login routed!');
+            ctx.loggedIn = sessionStorage.getItem('authtoken') !== null;
+            ctx.username = sessionStorage.getItem('username');
+            ctx.firstName = sessionStorage.getItem('firstName');
+            ctx.lastName = sessionStorage.getItem('lastName');
+            ctx.email = sessionStorage.getItem('email');
+
+            ctx.loadPartials({
+                userDropDown: '../templates/common/userDropDown.hbs',
+                enterDropDown: '../templates/common/enterDropDown.hbs',
+                header: '../templates/common/header.hbs',
+                footer: '../templates/common/footer.hbs',
+                scrollTop: '../templates/common/scrollTop.hbs',
+                scripts: '../templates/common/scripts.hbs',
+
+                loginForm: '../templates/login/loginForm.hbs'
+
+            }).then(function () {
+                this.partial('../templates/login/loginPage.hbs')
+            })
+        }
+
         function displayHome(ctx) {
+            console.log('home page routed!');
             ctx.loggedIn = sessionStorage.getItem('authtoken') !== null;
             ctx.username = sessionStorage.getItem('username');
             ctx.firstName = sessionStorage.getItem('firstName');
