@@ -1,0 +1,84 @@
+{{> header}}
+<script type="text/javascript">
+
+    window.onload = function() {
+        $("#editForm").hide();
+
+
+        $("#editProfileBtn").click(function (e) {
+            $("#editForm").show();
+            return false //option to stop
+        });
+    };
+</script>
+<section id="ProfileSection" style="margin-top:-35px;">
+
+    <section id="ProfileSection" style="margin-top:-35px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 offset-lg-2 text-left">
+                    <h4 class="section-title">{{username}}</h4>
+                    <button id="editProfileBtn" class="editbutton">Edit your Profile</button>
+                    <form id="editForm">
+                        <input type="text" name="facebook" placeholder="enter your facebook">
+                        <input type="text" name="skype" placeholder="enter your skype">
+                        <input type="text" name="twitter" placeholder="enter your twitter">
+                        <input type="text" name="phone" placeholder="enter your phone number">
+                        <input type="text" name="address" placeholder="enter your address"><br><br>
+                        <input type="submit" class="btn-success" value="Edit" id="editProfile">
+                    </form>
+                    <br>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 offset-lg-2">
+                    <script language="javascript">
+                        window.addEventListener('load', function() {
+                            document.querySelector('input[type="file"]').addEventListener('change', function() {
+                                if (this.files && this.files[0]) {
+                                    var img = document.querySelector('#myImg');  // $('img')[0]
+                                    img.src = URL.createObjectURL(this.files[0]); // set src to file url
+                                    img.onload = imageIsLoaded; // optional onload event listener
+                                }
+                            });
+                        });
+
+                        function imageIsLoaded(e) { alert("Successfully changed avatar."); }
+
+                    </script>
+                    <img class="already-avatar" id="myImg" src="../img/emptyAvatar.jpg" width="186px"    height="236px"/>
+                    <br><br>
+                    <h4>Change avatar</h4>
+                    <input type='file' />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 offset-lg-2">
+                    <div class="info">
+                        <div>
+                            <i class="fa fa-map-marker"></i>
+                            <p>{{address}}<br>Sofia, BG</p>
+                        </div>
+
+                        <div>
+                            <i class="fa fa-envelope"></i>
+                            <p>{{email}}</p>
+                        </div>
+
+                        <div>
+                            <i class="fa fa-phone"></i>
+                            <p>{{phone}}</p>
+                        </div>
+                        <a href="{{facebook}}" class="fa fa-facebook"></a>
+                        <a href="{{twitter}}" class="fa fa-twitter"></a>
+                        <a href="{{skype}}" class="fa fa-skype"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+</section>
+
+{{> footer}}
