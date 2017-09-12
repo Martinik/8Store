@@ -3,7 +3,7 @@
 
     <div class="main">
 
-        <h3>Please Log In, or <a href="register.html">Sign Up</a></h3>
+        <h3>Please Log In, or <a href="#/register">Sign Up</a></h3>
         <div class="row">
             <div class="col-xs-6 col-sm-6 col-md-6">
                 <a href="#" class="btn btn-lg btn-primary btn-block">Facebook</a>
@@ -17,16 +17,16 @@
             <span class="span-or">or</span>
         </div>
 
-        <form role="form">
+        <form action="#/login" method="post">
 
             <div class="form-group">
-                <label for="inputUsernameEmail">Username or email</label>
-                <input type="text" class="form-control" id="inputUsernameEmail">
+                <label for="inputUsernameEmail">Username</label>
+                <input type="text" class="form-control" id="inputUsername" name="username">
             </div>
             <div class="form-group">
                 <a class="pull-right" href="#">Forgot password?</a>
                 <label for="inputPassword">Password</label>
-                <input type="password" class="form-control" id="inputPassword">
+                <input type="password" class="form-control" id="inputPassword" name="password">
             </div>
             <div class="checkbox pull-right">
                 <label>
@@ -36,9 +36,10 @@
             <br>
             <br>
             <div class="row">
-                <button type="submit" id="login-btn" class="btn btn btn-primary offset-4 col-lg-4">
-                    Log In
-                </button>
+                <!--<button type="submit" id="login-btn" class="btn btn btn-primary offset-4 col-lg-4">-->
+                    <!--Log In-->
+                <!--</button>-->
+                <input id="login-btn" class="btn btn btn-primary offset-4 col-lg-4"  type="submit" value="Login"/>
             </div>
         </form>
 

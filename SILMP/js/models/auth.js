@@ -6,7 +6,13 @@ let auth = (() => {
         sessionStorage.setItem('userId', userId);
         let username = userInfo.username;
         sessionStorage.setItem('username', username);
-        sessionStorage.setItem('teamId', userInfo.teamId);
+        let firstName = userInfo.firstName;
+        sessionStorage.setItem('firstName', firstName);
+        let lastName = userInfo.lastName;
+        sessionStorage.setItem('lastName', lastName);
+        let email = userInfo.email;
+        sessionStorage.setItem('email', email);
+
     }
 
     // user/login

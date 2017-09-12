@@ -8,19 +8,37 @@ $(() => {
 
         //Home Page
         this.get('index.html', displayHome);
+        this.get('#/index', displayHome);
         this.get('#/home', displayHome);
 
         //Login Page
-        this.get('login.html', displayLogin);
+        this.get('#/login', displayLogin);
+        this.post('#/login', postLogin);
 
         //Register Page
-        this.get('register.html', displayRegister);
-
-
+        this.get('#/register', displayRegister);
 
 
 
         // functions
+
+        function postLogin(ctx) {
+            console.log('post login routed!');
+
+            let username = ctx.params.username;
+            let password = ctx.params.password;
+
+            auth.login(username, password)
+                .then(function (userInfo) {
+                    auth.saveSession(userInfo);
+                    auth.showInfo('Logged In!');
+                    displayHome(ctx);
+                })
+                .catch(auth.handleError);
+
+        }
+
+
 
         function displayRegister(ctx) {
             console.log('register routed!');
