@@ -31,6 +31,7 @@
       Author URL: https://bootstrapmade.com
     ======================================================= -->
     <script src="../lib/jquery/jquery.min.js"></script>
+    <link href="../css/notifications.css" rel="stylesheet">
 
 
     <!-- Required JavaScript Libraries -->
@@ -54,14 +55,18 @@
 
     <script src="../js/models/requester.js"></script>
     <script src="../js/models/auth.js"></script>
+    <script src="../js/models/petsService.js"></script>
     <script src="../js/app.js"></script>
 
 
   </head>
 
   <body>
-  <div id="infoBox" class="notification" disabled></div>
-  <div id="errorBox" class="notification" disabled></div>
+  <div id="notifications">
+    <div id="loadingBox" class="notification"><span>Loading …</span></div>
+    <div id="infoBox" class="notification"><span>Info</span></div>
+    <div id="errorBox" class="notification"><span>Error</span></div>
+  </div>
   <div id="mainContent">
 
 

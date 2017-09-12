@@ -26,10 +26,13 @@ let auth = (() => {
     }
 
     // user/register
-    function register(username, password) {
+    function register(username, password, firstName, lastName, email) {
         let userData = {
             username,
-            password
+            password,
+            firstName,
+            lastName,
+            email
         };
 
         return requester.post('user', '', 'basic', userData);
@@ -61,6 +64,11 @@ let auth = (() => {
         errorBox.show();
         setTimeout(() => errorBox.fadeOut(), 3000);
     }
+
+    $(document).on({
+        ajaxStart: () => $(`#loadingBox`).show(),
+        ajaxStop: () => $(`#loadingBox`).fadeOut()
+    });
 
     return {
         login,

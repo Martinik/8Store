@@ -1,5 +1,11 @@
 $(() => {
 
+    let notifications = $(`.notification`)
+    notifications.hide();
+    notifications.click(function () {
+        $(this).hide();
+    });
+
     let shouldInitCustom = true;
 
     const app = Sammy('#mainContent', function () {
@@ -17,10 +23,184 @@ $(() => {
 
         //Register Page
         this.get('#/register', displayRegister);
+        this.post('#/register', postRegister);
+
+        //Logout
+        this.get('#/logout', logoutUser);
+
+        //Explore Pages
+        this.get('#/explore', displayExplore);
+        this.get('#/explore/lost', displayExploreLost);
+        this.get('#/explore/found', displayExploreFound);
 
 
 
         // functions
+
+        function displayExploreFound(ctx) {
+
+            $(`#loadingBox`).show();
+
+
+            console.log('explore found routed!');
+
+            ctx.loggedIn = sessionStorage.getItem('authtoken') !== null;
+            ctx.username = sessionStorage.getItem('username');
+            ctx.firstName = sessionStorage.getItem('firstName');
+            ctx.lastName = sessionStorage.getItem('lastName');
+            ctx.email = sessionStorage.getItem('email');
+
+            petsService.loadFoundPets(16).then(function (foundPetsData) {
+
+                ctx.pets = foundPetsData;
+
+                ctx.loadPartials({
+                    userDropDown: '../templates/common/userDropDown.hbs',
+                    enterDropDown: '../templates/common/enterDropDown.hbs',
+                    header: '../templates/common/header.hbs',
+                    footer: '../templates/common/footer.hbs',
+                    scrollTop: '../templates/common/scrollTop.hbs',
+                    scripts: '../templates/common/scripts.hbs',
+
+                    petThumbnail: '../templates/explore/petThumbnail.hbs'
+
+                }).then(function () {
+                    this.partial('../templates/explore/exploreFoundPage.hbs')
+                }).then(startPageScript)
+                    .catch(auth.handleError);
+            });
+
+            function startPageScript() {
+                $(`#loadingBox`).fadeOut()
+                let loadMoreLink = $(`#loadMore`);
+                loadMoreLink.click(loadMorePets);
+                function loadMorePets() {
+                    console.log('TODO: load more pets');
+                    //TODO
+                }
+            }
+        }
+
+        function displayExploreLost(ctx) {
+            console.log('explore lost routed!');
+
+            $(`#loadingBox`).show();
+
+            ctx.loggedIn = sessionStorage.getItem('authtoken') !== null;
+            ctx.username = sessionStorage.getItem('username');
+            ctx.firstName = sessionStorage.getItem('firstName');
+            ctx.lastName = sessionStorage.getItem('lastName');
+            ctx.email = sessionStorage.getItem('email');
+
+            petsService.loadLostPets(16).then(function (lostPetsData) {
+
+                    ctx.pets = lostPetsData;
+
+                    ctx.loadPartials({
+                        userDropDown: '../templates/common/userDropDown.hbs',
+                        enterDropDown: '../templates/common/enterDropDown.hbs',
+                        header: '../templates/common/header.hbs',
+                        footer: '../templates/common/footer.hbs',
+                        scrollTop: '../templates/common/scrollTop.hbs',
+                        scripts: '../templates/common/scripts.hbs',
+
+                        petThumbnail: '../templates/explore/petThumbnail.hbs'
+
+                    }).then(function () {
+                        this.partial('../templates/explore/exploreLostPage.hbs')
+                    }).then(startPageScript)
+                        .catch(auth.handleError);
+            });
+
+            function startPageScript() {
+                $(`#loadingBox`).fadeOut()
+                let loadMoreLink = $(`#loadMore`);
+                loadMoreLink.click(loadMorePets);
+                function loadMorePets() {
+                    console.log('TODO: load more pets');
+                    //TODO
+                }
+            }
+        }
+
+        function displayExplore(ctx) {
+
+            $(`#loadingBox`).show();
+
+            console.log('explore routed!');
+
+            let searchPetType = 'all';
+
+            ctx.loggedIn = sessionStorage.getItem('authtoken') !== null;
+            ctx.username = sessionStorage.getItem('username');
+            ctx.firstName = sessionStorage.getItem('firstName');
+            ctx.lastName = sessionStorage.getItem('lastName');
+            ctx.email = sessionStorage.getItem('email');
+
+            let lostPets = [];
+            let foundPets = [];
+            let allPets = [];
+
+            petsService.loadLostPets(8).then(function (lostPetsData) {
+                petsService.loadFoundPets(8).then(function (foundPetsData) {
+                    lostPets = lostPetsData;
+                    foundPets = foundPetsData;
+                    allPets.push.apply(allPets, lostPets);
+                    allPets.push.apply(allPets, foundPets);
+
+                    console.log('ALL PETS');
+                    console.log(allPets);
+
+                    allPets.sort(function(a, b) {
+                        return (b._kmd.ect) - (a._kmd.ect);
+                    });
+
+                    ctx.pets = allPets;
+
+                    ctx.loadPartials({
+                        userDropDown: '../templates/common/userDropDown.hbs',
+                        enterDropDown: '../templates/common/enterDropDown.hbs',
+                        header: '../templates/common/header.hbs',
+                        footer: '../templates/common/footer.hbs',
+                        scrollTop: '../templates/common/scrollTop.hbs',
+                        scripts: '../templates/common/scripts.hbs',
+
+                        petThumbnail: '../templates/explore/petThumbnail.hbs'
+
+                    }).then(function () {
+                        this.partial('../templates/explore/explorePage.hbs')
+                    }).then(startPageScript)
+                        .catch(auth.handleError);
+
+
+                })
+            });
+
+
+            function startPageScript() {
+                $(`#loadingBox`).fadeOut()
+                let loadMoreLink = $(`#loadMore`);
+                loadMoreLink.click(loadMorePets);
+
+                function loadMorePets() {
+                    console.log('TODO: load more pets');
+                    //TODO
+                }
+            }
+        }
+
+
+
+        function logoutUser(ctx) {
+            console.log('logout routed!');
+            auth.logout()
+                .then(function () {
+                    sessionStorage.clear();
+                    auth.showInfo('Logged Out!');
+                    displayHome(ctx);
+                })
+                .catch(auth.handleError);
+        }
 
         function postLogin(ctx) {
             console.log('post login routed!');
@@ -39,6 +219,27 @@ $(() => {
         }
 
 
+        function postRegister(ctx) {
+            let firstName = ctx.params.firstName;
+            let lastName = ctx.params.lastName;
+            let email = ctx.params.email;
+            let username = ctx.params.username;
+            let password = ctx.params.password;
+            let repeatPassword = ctx.params.repeatPassword;
+
+            if (password !== repeatPassword) {
+                auth.showError('Passwords do not match!')
+            }
+            else {
+                auth.register(username, password, firstName, lastName, email)
+                    .then(function (userInfo) {
+                        auth.saveSession(userInfo);
+                        auth.showInfo('Registered!');
+                        displayHome(ctx);
+                    })
+                    .catch(auth.handleError);
+            }
+        }
 
         function displayRegister(ctx) {
             console.log('register routed!');

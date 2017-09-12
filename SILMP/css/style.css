@@ -1016,20 +1016,9 @@ body.mobile-nav-active #mobile-nav-toggle {
     width: 100%;
 }
 
-/*navbar user info*/
-#navbar-dashboard-btn{
-    border-radius: 5px;
-    background-color: #5cb85c;
-    width: 100%;
-}
-#navbar-logout-btn{
-    border-radius: 5px;
-    background-color: red;
-}
 
-.user-dropdown {
-    text-align: center;
-}
+
+
 
 
 /*end of navbar user info*/

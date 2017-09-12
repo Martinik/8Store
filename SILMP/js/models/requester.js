@@ -2,9 +2,16 @@ let requester = (() => {
     const kinveyBaseUrl = "https://baas.kinvey.com/";
     const kinveyAppKey = "kid_SkML9mE9-";
     const kinveyAppSecret = "af8552fd3301489b8c8d33ad0322a683";
+    const kinveyMasterSecret = "";
+    const guestAccount = "guest";
+    const guestPass = "guest";
+
 
     // Creates the authentication header
     function makeAuth(type) {
+        if(type === 'guest'){
+            return 'Basic ' + btoa(guestAccount + ':' + guestPass)
+        }
         return type === 'basic'
             ?  'Basic ' + btoa(kinveyAppKey + ':' + kinveyAppSecret)
             :  'Kinvey ' + sessionStorage.getItem('authtoken');
