@@ -1,13 +1,18 @@
 <div class="col-lg-12">
-    <form method="post" action="#/createFoundPoster">
+    <form id="createPetForm" method="post" action="#/createFoundPoster">
         <h1>Create poster for found pet</h1>
         <hr/>
         <br/>
-        <div class="dropzone">
-            <p>Drag and Drop picture of the pet you have found</p>
-            <div class="posterImage">
+
+        <div id="petThumbnailBox">
+            <p>Drag your image here or click in this area.</p>
+            <div id="formWrapper">
+                <input id="petThumbnailForm" type="file" name="petImage">
+                <input id="thumbnailURL" type="text" name="thumbnailURL" hidden>
+                <input id="thumbnailId" type="text" name="thumbnailId" hidden>
             </div>
         </div>
+
         <br/>
         <div class="form-group">
             <label for="petType">What was it?</label>
@@ -59,7 +64,7 @@
         <input type="hidden" id="lng" name="lng">
         <input type="hidden" id="rad" name="rad">
         <br/>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button id="createPetSubmit" type="submit" class="btn btn-primary">Submit</button>
     </form>
     <br/>
 </div>

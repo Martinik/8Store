@@ -1,5 +1,179 @@
 <script>
 
+    const kinveyBaseUrl = "https://baas.kinvey.com/";
+    const kinveyAppKey = "kid_SkML9mE9-";
+    let guestCredentials = btoa('guest:guest');
+
+    $(`#createPetSubmit`).click(handleSubmitButton);
+
+
+    $('#petThumbnailBox input').change(function () {
+        readURL(this.files);
+        $('#petThumbnailBox p').text("image selected");
+    });
+
+     function handleSubmitButton(e) {
+        e.preventDefault();
+
+
+        let file = $(`#petThumbnailForm`)[0].files[0];
+
+        let metadata= {
+            '_filename': file.name,
+            'size': '' + file.size,
+            'type': file.type
+        };
+
+        upload(metadata, file);
+        console.log('File Data:');
+    }
+
+    function upload(data, file) {
+        console.log('attempt upload');
+        let requestURL = kinveyBaseUrl + 'blob/' + kinveyAppKey;
+
+        let requestHeaders = {
+            'Authorization': 'Basic ' + guestCredentials,
+            'Content-Type': 'application/json',
+            'X-Kinvey-Content-Type': data.type
+        };
+
+        $.ajax(
+                {
+                    method: 'POST',
+                    url: requestURL,
+                    headers: requestHeaders,
+                    data: JSON.stringify(data),
+                    public: true
+                }
+        ).then(
+                function (success) {
+                    console.log('uploading: first ajax success');
+                    let innerHeaders = success._requiredHeaders;
+
+
+                    innerHeaders['Content-Type'] = file.type;
+
+                    let uploadURL = success._uploadURL;
+                    let element_id = success._id;
+
+                    $.ajax({
+                                method: 'PUT',
+                                url: uploadURL,
+                                headers: innerHeaders,
+                                processData: false,
+                                data: file
+                            }
+                    ).then(
+                            function (success) {
+                                console.log('Successfully uploaded file!');
+                                console.log(success);
+                                console.log(uploadURL);
+                                console.log(element_id);
+
+                                requestURL = kinveyBaseUrl + 'blob/' + kinveyAppKey + '/' + element_id;
+
+                                let requestHeaders = {
+                                    'Authorization': 'Basic ' + guestCredentials,
+                                    'Content-Type': 'application/json'
+                                };
+
+                                $.ajax({
+                                    method: 'GET',
+                                    url: requestURL,
+                                    headers: requestHeaders
+                                }).then(
+                                        function (success) {
+                                            let url = success._downloadURL;
+
+                                            $(`#thumbnailId`).val(element_id);
+                                            $(`#thumbnailURL`).val(url);
+
+                                            $(`#createPetForm`).submit();
+                                        }
+                                )
+
+
+
+                            }
+                    )
+                }
+        )
+    }
+
+
+
+
+    function readURL(files) {
+
+        if (files && files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+
+                $('#petThumbnailBox').css("background-image", `url(${e.target.result})`);
+                $('#petThumbnailBox').css("border", `4px dashed #fff`);
+                $('#formWrapper').css("outline", `none`);
+                $('#formWrapper').css("opacity", `0`);
+
+
+            };
+
+            reader.readAsDataURL(files[0]);
+
+            console.log(files);
+        }
+    }
+
+    //    (function () {
+    //        let dropzone = $(".dropzone");
+    //        let base64ImageHidden = $("#base64Image");
+    //
+    //        function handleFiles(files) {
+    //            let oldImage = $(".posterImage");
+    //            let file = files[0];
+    //            let imageType = /^image\//;
+    //
+    //            console.log(file);
+    //
+    //            if (imageType.test(file.type)) {
+    //                oldImage.remove();
+    //                let img = document.createElement("img");
+    //                img.classList.add("posterImage");
+    //                img.setAttribute("name", "petImage");
+    //                img.file = file;
+    //                dropzone.append(img); // Assuming that "preview" is the div output where the content will be displayed.
+    //
+    //                let reader = new FileReader();
+    //                reader.onload = (function(aImg) {
+    //                    return function(e) {
+    //                        aImg.src = e.target.result;
+    //                        base64ImageHidden.val(e.target.result);
+    //                    };
+    //                })(img);
+    //                reader.readAsDataURL(file);
+    //            }
+    //        }
+    //
+    //        dropzone.on("drop", function (event) {
+    //            event.preventDefault();
+    //            this.className = 'dropzone';
+    //            let files = event.originalEvent.dataTransfer.files;
+    //            handleFiles(files);
+    //
+    //        });
+    //
+    //        dropzone.on("dragover", function () {
+    //            this.className = 'dropzone dragover';
+    //            return false;
+    //        });
+    //
+    //        dropzone.on("dragleave", function () {
+    //            this.className = 'dropzone';
+    //            return false;
+    //        });
+    //    })();
+
     //Set up some of our variables.
     let map; //Will contain map object.
     let marker = false; ////Has the user plotted their location marker?
@@ -22,11 +196,11 @@
         map = new google.maps.Map(document.getElementById('map'), options);
 
         //Listen for any clicks on the map.
-        google.maps.event.addListener(map, 'click', function(event) {
+        google.maps.event.addListener(map, 'click', function (event) {
             //Get the location that the user clicked.
             let clickedLocation = event.latLng;
             //If the marker hasn't been added.
-            if(marker === false){
+            if (marker === false) {
                 //Create the marker.
                 marker = new google.maps.Marker({
                     position: clickedLocation,
@@ -46,24 +220,24 @@
                     editable: true
                 });
                 //Listen for drag events!
-                google.maps.event.addListener(marker, 'dragend', function(event){
+                google.maps.event.addListener(marker, 'dragend', function (event) {
                     markerLocation();
                 });
-                google.maps.event.addListener(cityCircle, 'dragend', function(event){
+                google.maps.event.addListener(cityCircle, 'dragend', function (event) {
                     markerLocation();
                 });
-                google.maps.event.addListener(cityCircle, 'radius_changed', function(event){
+                google.maps.event.addListener(cityCircle, 'radius_changed', function (event) {
                     markerLocation();
                 });
 
-                google.maps.event.addListener(marker, 'drag', function(event){
+                google.maps.event.addListener(marker, 'drag', function (event) {
                     cityCircle.setCenter(marker.getPosition());
                 });
-                google.maps.event.addListener(cityCircle, 'drag', function(event){
+                google.maps.event.addListener(cityCircle, 'drag', function (event) {
                     marker.setPosition(cityCircle.getCenter());
                 });
 
-            } else{
+            } else {
                 //Marker has already been added, so just change its location.
                 marker.setPosition(clickedLocation);
                 cityCircle.setCenter(clickedLocation);
@@ -75,7 +249,7 @@
 
     //This function will get the marker's current location and then add the lat/long
     //values to our textfields so that we can save the location.
-    function markerLocation(){
+    function markerLocation() {
         //Get location.
         let currentLocation = marker.getPosition();
         //Get radius.
@@ -92,50 +266,4 @@
     console.log("load map")
 
 
-    (function () {
-        let dropzone = $(".dropzone");
-        let base64ImageHidden = $("#base64Image");
-
-        function handleFiles(files) {
-            let oldImage = $(".posterImage");
-            let file = files[0];
-            let imageType = /^image\//;
-
-            if (imageType.test(file.type)) {
-                oldImage.remove();
-                let img = document.createElement("img");
-                img.classList.add("posterImage");
-                img.setAttribute("name", "petImage");
-                img.file = file;
-                dropzone.append(img); // Assuming that "preview" is the div output where the content will be displayed.
-
-                let reader = new FileReader();
-                reader.onload = (function(aImg) {
-                    return function(e) {
-                        aImg.src = e.target.result;
-                        base64ImageHidden.val(e.target.result);
-                    };
-                })(img);
-                reader.readAsDataURL(file);
-            }
-        }
-
-        dropzone.on("drop", function (event) {
-            event.preventDefault();
-            this.className = 'dropzone';
-            let files = event.originalEvent.dataTransfer.files;
-            handleFiles(files);
-
-        });
-
-        dropzone.on("dragover", function () {
-            this.className = 'dropzone dragover';
-            return false;
-        });
-
-        dropzone.on("dragleave", function () {
-            this.className = 'dropzone';
-            return false;
-        });
-    })();
 </script>

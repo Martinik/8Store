@@ -5,6 +5,7 @@ let requester = (() => {
     const kinveyMasterSecret = "";
     const guestAccount = "guest";
     const guestPass = "guest";
+    let guestCredentials = btoa('guest:guest');
 
 
     // Creates the authentication header
@@ -52,6 +53,58 @@ let requester = (() => {
         return $.ajax(makeRequest('DELETE', module, endpoint, auth));
     }
 
+
+    //Function to upload files
+    function upload(data, file) {
+        console.log('attempt upload');
+        let requestURL = kinveyBaseUrl + 'blob/' + kinveyAppKey;
+
+        let requestHeaders = {
+            'Authorization': 'Basic ' + guestCredentials,
+            'Content-Type': 'application/json',
+            'X-Kinvey-Content-Type': data.type
+        };
+
+        $.ajax(
+            {
+                method: 'POST',
+                url: requestURL,
+                headers: requestHeaders,
+                data: JSON.stringify(data),
+                public: true
+            }
+        ).then(
+            function (success) {
+                console.log('uploading: first ajax success');
+                let innerHeaders = success._requiredHeaders;
+
+
+                innerHeaders['Content-Type'] = file.type;
+
+                let uploadURL = success._uploadURL;
+                let element_id = success._id;
+
+                $.ajax({
+                        method: 'PUT',
+                        url: uploadURL,
+                        headers: innerHeaders,
+                        processData: false,
+                        data: file
+                    }
+                ).then(
+                    function (success) {
+                        console.log('Successfully uploaded file!');
+                        console.log(success);
+                        console.log(uploadURL);
+                        console.log(element_id);
+
+                        return {url: uploadURL, id: element_id};
+
+                    }
+                )
+            }
+        )
+    }
     return {
         get,
         post,

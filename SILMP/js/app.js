@@ -44,7 +44,6 @@ $(() => {
         this.get('#/userProfile', displayUserProfile);
 
 
-
         // functions
 
         function postCreateFoundPoster(ctx) {
@@ -57,6 +56,9 @@ $(() => {
             let petLostLng = ctx.params.lng;
             let petLostRadius = ctx.params.rad;
 
+            let thumbnailURL = ctx.params.thumbnailURL;
+            let thumbnailId = ctx.params.thumbnailId;
+
             let lostPetData = {
                 petType,
                 petBreed,
@@ -64,7 +66,9 @@ $(() => {
                 petInformation,
                 petLostLat,
                 petLostLng,
-                petLostRadius
+                petLostRadius,
+                thumbnailURL,
+                thumbnailId
             };
 
             requester.post("appdata", "foundPets", "kinvey", lostPetData)
@@ -87,6 +91,13 @@ $(() => {
             let petLostLng = ctx.params.lng;
             let petLostRadius = ctx.params.rad;
 
+            let thumbnailURL = ctx.params.thumbnailURL;
+            let thumbnailId = ctx.params.thumbnailId;
+
+            console.log(thumbnailId);
+            console.log(thumbnailURL);
+
+
             let lostPetData = {
                 petName,
                 petType,
@@ -95,7 +106,9 @@ $(() => {
                 petInformation,
                 petLostLat,
                 petLostLng,
-                petLostRadius
+                petLostRadius,
+                thumbnailURL,
+                thumbnailId
             };
 
             requester.post("appdata", "lostPets", "kinvey", lostPetData)
@@ -197,22 +210,22 @@ $(() => {
 
             petsService.loadLostPets(16).then(function (lostPetsData) {
 
-                    ctx.pets = lostPetsData;
+                ctx.pets = lostPetsData;
 
-                    ctx.loadPartials({
-                        userDropDown: '../templates/common/userDropDown.hbs',
-                        enterDropDown: '../templates/common/enterDropDown.hbs',
-                        header: '../templates/common/header.hbs',
-                        footer: '../templates/common/footer.hbs',
-                        scrollTop: '../templates/common/scrollTop.hbs',
-                        scripts: '../templates/common/scripts.hbs',
+                ctx.loadPartials({
+                    userDropDown: '../templates/common/userDropDown.hbs',
+                    enterDropDown: '../templates/common/enterDropDown.hbs',
+                    header: '../templates/common/header.hbs',
+                    footer: '../templates/common/footer.hbs',
+                    scrollTop: '../templates/common/scrollTop.hbs',
+                    scripts: '../templates/common/scripts.hbs',
 
-                        petThumbnail: '../templates/explore/petThumbnail.hbs'
+                    petThumbnail: '../templates/explore/petThumbnail.hbs'
 
-                    }).then(function () {
-                        this.partial('../templates/explore/exploreLostPage.hbs')
-                    }).then(startPageScript)
-                        .catch(auth.handleError);
+                }).then(function () {
+                    this.partial('../templates/explore/exploreLostPage.hbs')
+                }).then(startPageScript)
+                    .catch(auth.handleError);
             });
 
             function startPageScript() {
@@ -254,7 +267,7 @@ $(() => {
                     console.log('ALL PETS');
                     console.log(allPets);
 
-                    allPets.sort(function(a, b) {
+                    allPets.sort(function (a, b) {
                         return (b._kmd.ect) - (a._kmd.ect);
                     });
 
@@ -291,7 +304,6 @@ $(() => {
                 }
             }
         }
-
 
 
         function logoutUser(ctx) {
@@ -389,17 +401,21 @@ $(() => {
                 this.partial('../templates/login/loginPage.hbs')
             })
         }
-        function editUserInfo(){
-            let userInfo=$('#editForm').serializeArray().map(function(x){data[x.name] = x.value;});
+
+        function editUserInfo() {
+            let userInfo = $('#editForm').serializeArray().map(function (x) {
+                data[x.name] = x.value;
+            });
 
             let userid = sessionStorage.getItem('userId');
 
-            return requester.update('user', userid, 'kinvey',userInfo).then(
+            return requester.update('user', userid, 'kinvey', userInfo).then(
                 displayUserProfile(ctx)
             );
 
         }
-        function displayUserProfile (ctx){
+
+        function displayUserProfile(ctx) {
             $(`#loadingBox`).show();
 
             console.log('user profile routed');
@@ -421,6 +437,7 @@ $(() => {
             }).catch(auth.handleError);
 
         }
+
         function displayHome(ctx) {
             console.log('home page routed!');
             ctx.loggedIn = sessionStorage.getItem('authtoken') !== null;
@@ -464,7 +481,6 @@ $(() => {
             ctx.foundPets = foundPets;
 
 
-
             // #template variables
             ctx.loadPartials({
                 userDropDown: '../templates/common/userDropDown.hbs',
@@ -485,7 +501,7 @@ $(() => {
                 contactSection: '../templates/home/contactSection.hbs'
             }).then(function () {
                 this.partial('../templates/home/homePage.hbs').then(function () {
-                    if(shouldInitCustom){
+                    if (shouldInitCustom) {
                         templateCustom();
                         shouldInitCustom = false;
                     }
@@ -495,5 +511,5 @@ $(() => {
         }
 
     });
-app.run();
+    app.run();
 });

@@ -1,5 +1,5 @@
 <div class="col-lg-12">
-    <form method="post" action="#/createLostPoster">
+    <form id="createPetForm" method="post" action="#/createLostPoster">
         <h1>Create poster for lost pet</h1>
         <hr/>
         <div class="form-group">
@@ -7,12 +7,16 @@
             <input type="text" class="form-control" id="petName" placeholder="Name of Pet" name="petName">
         </div>
         <br/>
-        <div class="dropzone">
-            <p>Drag and Drop picture of your pet here to upload</p>
-            <img name="petImage" class="posterImage">
-            </img>
+
+        <div id="petThumbnailBox">
+            <p>Drag your image here or click in this area.</p>
+            <div id="formWrapper">
+            <input id="petThumbnailForm" type="file" name="petImage">
+            <input id="thumbnailURL" type="text" name="thumbnailURL" hidden>
+            <input id="thumbnailId" type="text" name="thumbnailId" hidden>
+            </div>
         </div>
-        <input type="hidden" id="base64Image" name="base64Image">
+
         <br/>
         <div class="form-group">
             <label for="petType">What was it?</label>
@@ -64,7 +68,7 @@
         <input type="hidden" id="lng" name="lng">
         <input type="hidden" id="rad" name="rad">
         <br/>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button id="createPetSubmit" type="submit" class="btn btn-primary">Submit</button>
     </form>
     <br/>
 </div>
