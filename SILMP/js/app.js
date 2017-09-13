@@ -292,21 +292,18 @@ $(() => {
             })
         }
         function editUserInfo(){
-            var formInfo = document.getElementById("editForm");
-            let facebook=formInfo[0].value;
-            let skype=formInfo[1].value;
-            let twitter=formInfo[2].value;
-            let phone=formInfo[3].value;
-            let address=formInfo[4].value;
-            let userInfo=[facebook,skype,twitter,phone,address];
+            let userInfo=$('#editForm').serializeArray().map(function(x){data[x.name] = x.value;});
 
             let userid = sessionStorage.getItem('userId');
 
-            requester.update('user', userid, 'kinvey',userInfo);
+            return requester.update('user', userid, 'kinvey',userInfo).then(
+                displayUserProfile(ctx)
+            );
 
-            displayUserProfile(ctx);
         }
         function displayUserProfile (ctx){
+            $(`#loadingBox`).show();
+
             console.log('user profile routed');
 
             ctx.loggedIn = sessionStorage.getItem('authtoken') !== null;
@@ -314,11 +311,6 @@ $(() => {
             ctx.firstName = sessionStorage.getItem('firstName');
             ctx.lastName = sessionStorage.getItem('lastName');
             ctx.email = sessionStorage.getItem('email');
-            ctx.facebook=sessionStorage.getItem('facebook')
-            ctx.skype=sessionStorage.getItem('skype')
-            ctx.twitter=sessionStorage.getItem('twitter')
-            ctx.phone=sessionStorage.getItem('phone')
-            ctx.address=sessionStorage.getItem('address')
 
             ctx.loadPartials({
                 userDropDown: '../templates/common/userDropDown.hbs',
@@ -326,10 +318,9 @@ $(() => {
                 header: '../templates/common/header.hbs',
                 footer: '../templates/common/footer.hbs',
                 scrollTop: '../templates/common/scrollTop.hbs',
-                scripts: '../templates/common/scripts.hbs',
             }).then(function () {
-                this.partial('../templates/user/userProfilePage.hbs')
-            })
+                this.partial('../templates/home/userProfilePage.hbs')
+            }).catch(auth.handleError);
 
         }
         function displayHome(ctx) {
