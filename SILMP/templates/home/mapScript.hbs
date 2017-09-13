@@ -1,26 +1,21 @@
 <script>
 
-    // Object with information about pets
-    let citymap = {
-        chicago: {
-            center: {lat: 41.878, lng: -87.629},
-            population: 2714856
-        },
-        newyork: {
-            center: {lat: 40.714, lng: -74.005},
-            population: 8405837
-        },
-        losangeles: {
-            center: {lat: 34.052, lng: -118.243},
-            population: 3857799
-        },
-        vancouver: {
-            center: {lat: 49.25, lng: -123.1},
-            population: 603502
-        }
-    };
+    let lostPets = [];
+    let foundPets = [];
+    let allPets = [];
+
+    petsService.loadAllLostPets().then(function (lostPetsData) {
+        petsService.loadAllFoundPets().then(function (foundPetsData) {
+            lostPets = lostPetsData;
+            foundPets = foundPetsData;
+            allPets.push.apply(allPets, lostPets);
+            allPets.push.apply(allPets, foundPets);
+            initMap();
+        })
+    });
 
     function initMap() {
+
         // Create the map.
         let map = new google.maps.Map(document.getElementById('map'), {
             zoom: 4,
@@ -28,46 +23,59 @@
             mapTypeId: 'hybrid',
         });
 
-        // Construct the circle for each pet.
-        // Note: We scale the area of the circle based on the population.
-        for (let city in citymap) {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function(position) {
+                let pos = {
+                    lat: position.coords.latitude,
+                    lng: position.coords.longitude
+                };
 
-            // Create marker for the location of the pet
-            let marker = new google.maps.Marker({
-                position: citymap[city].center,
-                map: map,
-                icon: "../img/icon-lost-map.png"
+                map.setCenter(pos);
             });
+        }
 
+        for (let pet of allPets) {
+            if (pet.lat && pet.lng && pet.radius) {
+                let petCoordinates = {lat: Number(pet.lat), lng: Number(pet.lng)};
+                let marker;
+                if(pet.petName) {
+                    // Create marker for the location of the pet
+                        marker = new google.maps.Marker({
+                        position: petCoordinates,
+                        map: map,
+                        icon: "../img/icon-lost-map.png"
+                    });
+                } else {
+                        marker = new google.maps.Marker({
+                        position: petCoordinates,
+                        map: map,
+                        icon: "../img/icon-found-map.png"
+                    });
+                }
 
-            google.maps.event.addListener(marker, 'click', function(ev){
+                google.maps.event.addListener(marker, 'click', function(ev){
 
-                // Add the circle for this city to the map.
-                let cityCircle = new google.maps.Circle({
-                    strokeColor: '#FF0000',
-                    strokeOpacity: 0.8,
-                    strokeWeight: 2,
-                    fillColor: '#FF0000',
-                    fillOpacity: 0.35,
-                    map: map,
-                    center: citymap[city].center,
-                    radius: Math.sqrt(citymap[city].population) * 100
+                    let petCircle = new google.maps.Circle({
+                        strokeColor: '#FF0000',
+                        strokeOpacity: 0.8,
+                        strokeWeight: 2,
+                        fillColor: '#FF0000',
+                        fillOpacity: 0.35,
+                        map: map,
+                        center: petCoordinates,
+                        radius: Number(pet.radius)
+                    });
+
+                    let coordInfoWindow = new google.maps.InfoWindow();
+                    google.maps.event.addListener(coordInfoWindow, 'closeclick', function (ev) {
+                        petCircle.setMap(null);
+                    });
+
+                    coordInfoWindow.setContent(createInfoWindowContent(petCircle.center, map.getZoom()));
+                    coordInfoWindow.setPosition(petCircle.center);
+                    coordInfoWindow.open(map);
                 });
-
-                let coordInfoWindow = new google.maps.InfoWindow();
-                google.maps.event.addListener(coordInfoWindow, 'closeclick', function (ev) {
-                    cityCircle.setMap(null);
-                });
-
-                coordInfoWindow.setContent(createInfoWindowContent(cityCircle.center, map.getZoom()));
-                coordInfoWindow.setPosition(cityCircle.center);
-                coordInfoWindow.open(map);
-
-//                map.addListener('zoom_changed', function() {
-//                    coordInfoWindow.setContent(createInfoWindowContent(cityCircle.center, map.getZoom()));
-//                    coordInfoWindow.open(map);
-//                });
-            });
+            }
         }
 
         let TILE_SIZE = 256;
@@ -98,8 +106,6 @@
         function project(latLng) {
             let siny = Math.sin(latLng.lat() * Math.PI / 180);
 
-            // Truncating to 0.9999 effectively limits latitude to 89.189. This is
-            // about a third of a tile past the edge of the world tile.
             siny = Math.min(Math.max(siny, -0.9999), 0.9999);
 
             return new google.maps.Point(

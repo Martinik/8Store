@@ -1,0 +1,59 @@
+<script>
+    let yHandler = (function () {
+        let loadedElements = 0;
+
+        return function yHandler() {
+            let grid = document.getElementById("petsGrid");
+            let gridHeight = grid.offsetHeight;
+            let yOffset = window.pageYOffset;
+            let y = yOffset + window.innerHeight;
+
+            if (y >= (gridHeight) ) {
+                let lostPets = [];
+                let foundPets = [];
+                let allPets = [];
+
+                petsService.loadLostPetsAndSkip(8, loadedElements).then(function (lostPetsData) {
+                    petsService.loadFoundPetsAndSkip(8, loadedElements).then(function (foundPetsData) {
+                        lostPets = lostPetsData;
+                        foundPets = foundPetsData;
+                        allPets.push.apply(allPets, lostPets);
+                        allPets.push.apply(allPets, foundPets);
+
+                        console.log('ALL PETS');
+                        console.log(allPets);
+
+                        allPets.sort(function(a, b) {
+                            return (b._kmd.ect) - (a._kmd.ect);
+                        });
+                        for (let pet of allPets) {
+                            let source = `<div class="col-lg-3 col-md-4 col-xs-6"><a href="#">` +
+                                    `<div class="hovereffect fill">` +
+                                    `<img class="fill img-responsive img-fluid img-thumbnail"` +
+                                    `src="https://i.pinimg.com/736x/28/48/2a/28482a0d5fbce3bb408e4af68289f464--funny-dog-pictures-really-funny-pictures.jpg"` +
+                                    `alt="">` +
+                                    `<div class="overlay">` +
+                                    `<h2>{{petType}}</h2>` +
+                                    `</div>` +
+                                    `</div>` +
+                                    `</a>` +
+                                    `</div>`;
+                            let template = Handlebars.compile(source);
+                            let context = {
+                                imageData: pet.imageData,
+                                petType: pet.petType
+                            };
+                            let html = template(context);
+                            grid.innerHTML += html;
+                        }
+                    })
+                });
+            }
+
+            loadedElements += 8;
+            console.log(loadedElements);
+        }
+    })();
+
+    window.onscroll = yHandler;
+</script>

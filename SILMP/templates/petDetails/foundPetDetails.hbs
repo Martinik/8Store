@@ -1,0 +1,22 @@
+<div class="col-lg-12">
+    <form method="post" action="#/createLostPoster">
+        <br/>
+        <div>
+            <img name="petImage" class="posterImage">
+            </img>
+        </div>
+        <br/>
+        <h1>This is {{petType}} was found here:</h1>
+        <div id="map" style="width:100%;"></div>
+        <br/>
+        <div class="form-group">
+            <label for="exampleTextarea">Additional information about this pet.</label>
+            <textarea class="form-control" id="exampleTextarea" rows="3" name="petInformation"></textarea>
+        </div>
+        <br/>
+    </form>
+    <br/>
+</div>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDS-RX-iagXzk6sZHXDf-vlNsVN3KXGaE&callback=initMap">
+</script>
