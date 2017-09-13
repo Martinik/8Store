@@ -1,25 +1,26 @@
+<link rel="stylesheet" type="text/css" href="../css/profileStyle.css"/>
+
 {{> header}}
-<script type="text/javascript">
 
-    window.onload = function() {
-        $("#editForm").hide();
-
-
-        $("#editProfileBtn").click(function (e) {
-            $("#editForm").show();
-            return false //option to stop
-        });
-    };
-</script>
 <section id="ProfileSection" style="margin-top:-35px;">
+    <script language="javascript">
+        function showEditForm(){
+            if(document.getElementById('editForm').style.display=="none"){
+                document.getElementById('editForm').style.display="block";
+            }
+            else{
+                document.getElementById('editForm').style.display="none";
 
+            }
+        }
+    </script>
     <section id="ProfileSection" style="margin-top:-35px;">
         <div class="container">
             <div class="row">
-                <div class="col-lg-3 offset-lg-2 text-left">
+                <div class="col-lg-3 offset-lg-2 text-left"  style="margin-top:-70px;">
                     <h4 class="section-title">{{username}}</h4>
-                    <button id="editProfileBtn" class="editbutton">Edit your Profile</button>
-                    <form id="editForm">
+                    <button id="editProfileBtn"  onclick="showEditForm();">Edit your Profile</button>
+                    <form id="editForm" style="display: none">
                         <input type="text" name="facebook" placeholder="enter your facebook">
                         <input type="text" name="skype" placeholder="enter your skype">
                         <input type="text" name="twitter" placeholder="enter your twitter">
@@ -57,7 +58,7 @@
                     <div class="info">
                         <div>
                             <i class="fa fa-map-marker"></i>
-                            <p>{{address}}<br>Sofia, BG</p>
+                            <p>{{address}}</p>
                         </div>
 
                         <div>
@@ -81,4 +82,7 @@
 
 </section>
 
+
+
 {{> footer}}
+{{> scrollTop}}
