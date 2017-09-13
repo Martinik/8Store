@@ -1,21 +1,22 @@
 <div class="col-lg-12">
-    <form>
+    <form method="post" action="#/createLostPoster">
         <h1>Create poster for lost pet</h1>
         <hr/>
         <div class="form-group">
             <label for="petName">What's the name of your Pet?</label>
-            <input type="text" class="form-control" id="petName" placeholder="Name of Pet">
+            <input type="text" class="form-control" id="petName" placeholder="Name of Pet" name="petName">
         </div>
         <br/>
         <div class="dropzone">
             <p>Drag and Drop picture of your pet here to upload</p>
-            <div class="posterImage">
-            </div>
+            <img name="petImage" class="posterImage">
+            </img>
         </div>
+        <input type="hidden" id="base64Image" name="base64Image">
         <br/>
         <div class="form-group">
             <label for="petType">What was it?</label>
-            <select class="form-control" id="petType">
+            <select class="form-control" id="petType" name="petType">
                 <option>empty</option>
                 <option>Dog</option>
                 <option>Cat</option>
@@ -27,39 +28,46 @@
         <br/>
         <div class="form-group">
             <label for="petBreed">What was it's breed?</label>
-            <select class="form-control" id="petBreed">
-                <option>empty</option>
-                <option>german shepherd</option>
-                <option>bulgarian shepherd</option>
-                <option>shepherd</option>
-                <option>german shepherd</option>
-                <option>german shepherd</option>
-            </select>
+            <input type="text" class="form-control" id="petBreed" placeholder="Breed of Pet" name="petBreed">
         </div>
         <br/>
         <fieldset class="form-group">
             <label>Gender</label>
             <div class="form-check">
                 <label class="form-check-label">
-                    <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                    <input type="radio" class="form-check-input" name="petGender" id="Male" value="Male" checked>
                     Male
                 </label>
             </div>
             <div class="form-check">
                 <label class="form-check-label">
-                    <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="option2">
+                    <input type="radio" class="form-check-input" name="petGender" id="Female" value="Female">
                     Female
+                </label>
+            </div>
+            <div class="form-check">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="petGender" id="Other" value="Other">
+                    Other
                 </label>
             </div>
         </fieldset>
         <br/>
         <div class="form-group">
             <label for="exampleTextarea">Additional information about your pet.</label>
-            <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+            <textarea class="form-control" id="exampleTextarea" rows="3" name="petInformation"></textarea>
             <small id="emailHelp" class="form-text text-muted">All kinds of distinctive features could help.</small>
         </div>
+        <br/>
+        <div id="map" style="width:100%;"></div>
+        <input type="hidden" id="lat" name="lat">
+        <input type="hidden" id="lng" name="lng">
+        <input type="hidden" id="rad" name="rad">
         <br/>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
     <br/>
 </div>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDS-RX-iagXzk6sZHXDf-vlNsVN3KXGaE&callback=initMap">
+</script>

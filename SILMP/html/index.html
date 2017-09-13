@@ -72,58 +72,5 @@
 
 
   </div>
-
-
-  <!--<script src="contactform/contactform.js"></script>-->
-
-
-  <!--Slick.js library-->
-
-
-
-  <script>
-      function initMap() {
-
-          var currentLat = "";
-          var currentLong = "";
-          showDefaultPosition();
-          getLocation();
-
-          function getLocation() {
-              if (navigator.geolocation) {
-
-                  navigator.geolocation.getCurrentPosition(showPosition);
-              } else {
-                  showDefaultPosition();
-              }
-          }
-          function showDefaultPosition() {
-              var uluru = {lat: 42.697712, lng: 23.321698};
-              var map = new google.maps.Map(document.getElementById('map'), {
-                  zoom: 11,
-                  center: uluru
-              });
-              var marker = new google.maps.Marker({
-                  position: uluru,
-                  map: map
-              });
-          }
-          function showPosition(position) {
-              var uluru = {lat: position.coords.latitude, lng: position.coords.longitude};
-              var map = new google.maps.Map(document.getElementById('map'), {
-                  zoom: 11,
-                  center: uluru
-              });
-              var marker = new google.maps.Marker({
-                  position: uluru,
-                  map: map
-              });
-          }
-      }
-  </script>
-
-
-
-
   </body>
 </html>

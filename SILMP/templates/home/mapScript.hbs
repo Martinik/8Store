@@ -1,0 +1,110 @@
+<script>
+
+    // Object with information about pets
+    let citymap = {
+        chicago: {
+            center: {lat: 41.878, lng: -87.629},
+            population: 2714856
+        },
+        newyork: {
+            center: {lat: 40.714, lng: -74.005},
+            population: 8405837
+        },
+        losangeles: {
+            center: {lat: 34.052, lng: -118.243},
+            population: 3857799
+        },
+        vancouver: {
+            center: {lat: 49.25, lng: -123.1},
+            population: 603502
+        }
+    };
+
+    function initMap() {
+        // Create the map.
+        let map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 4,
+            center: {lat: 37.090, lng: -95.712},
+            mapTypeId: 'hybrid',
+        });
+
+        // Construct the circle for each pet.
+        // Note: We scale the area of the circle based on the population.
+        for (let city in citymap) {
+
+            // Create marker for the location of the pet
+            let marker = new google.maps.Marker({
+                position: citymap[city].center,
+                map: map,
+                icon: "../img/icon-lost-map.png"
+            });
+
+
+            google.maps.event.addListener(marker, 'click', function(ev){
+
+                // Add the circle for this city to the map.
+                let cityCircle = new google.maps.Circle({
+                    strokeColor: '#FF0000',
+                    strokeOpacity: 0.8,
+                    strokeWeight: 2,
+                    fillColor: '#FF0000',
+                    fillOpacity: 0.35,
+                    map: map,
+                    center: citymap[city].center,
+                    radius: Math.sqrt(citymap[city].population) * 100
+                });
+
+                let coordInfoWindow = new google.maps.InfoWindow();
+                google.maps.event.addListener(coordInfoWindow, 'closeclick', function (ev) {
+                    cityCircle.setMap(null);
+                });
+
+                coordInfoWindow.setContent(createInfoWindowContent(cityCircle.center, map.getZoom()));
+                coordInfoWindow.setPosition(cityCircle.center);
+                coordInfoWindow.open(map);
+
+//                map.addListener('zoom_changed', function() {
+//                    coordInfoWindow.setContent(createInfoWindowContent(cityCircle.center, map.getZoom()));
+//                    coordInfoWindow.open(map);
+//                });
+            });
+        }
+
+        let TILE_SIZE = 256;
+
+        function createInfoWindowContent(latLng, zoom) {
+            let scale = 1 << zoom;
+
+            let worldCoordinate = project(latLng);
+
+            let pixelCoordinate = new google.maps.Point(
+                    Math.floor(worldCoordinate.x * scale),
+                    Math.floor(worldCoordinate.y * scale));
+
+            let tileCoordinate = new google.maps.Point(
+                    Math.floor(worldCoordinate.x * scale / TILE_SIZE),
+                    Math.floor(worldCoordinate.y * scale / TILE_SIZE));
+
+            return [
+                'Chicago, IL',
+                'LatLng: ' + latLng,
+                'Zoom level: ' + zoom,
+                'World Coordinate: ' + worldCoordinate,
+                'Pixel Coordinate: ' + pixelCoordinate,
+                'Tile Coordinate: ' + tileCoordinate
+            ].join('<br>');
+        }
+
+        function project(latLng) {
+            let siny = Math.sin(latLng.lat() * Math.PI / 180);
+
+            // Truncating to 0.9999 effectively limits latitude to 89.189. This is
+            // about a third of a tile past the edge of the world tile.
+            siny = Math.min(Math.max(siny, -0.9999), 0.9999);
+
+            return new google.maps.Point(
+                    TILE_SIZE * (0.5 + latLng.lng() / 360),
+                    TILE_SIZE * (0.5 - Math.log((1 + siny) / (1 - siny)) / (4 * Math.PI)));
+        }
+    }
+</script>

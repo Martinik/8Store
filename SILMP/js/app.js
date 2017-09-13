@@ -33,7 +33,12 @@ $(() => {
         this.get('#/explore/lost', displayExploreLost);
         this.get('#/explore/found', displayExploreFound);
 
+        //Create Poster Pages
+        this.get('#/createLostPoster', displayCreateLostPoster);
+        this.post('#/createLostPoster', postCreateLostPoster);
 
+        this.get('#/createFoundPoster', displayCreateFoundPoster);
+        this.post('#/createFoundPoster', postCreateFoundPoster);
 
         $("#editProfile").click(editUserInfo);
         this.get('#/userProfile', displayUserProfile);
@@ -41,6 +46,99 @@ $(() => {
 
 
         // functions
+
+        function postCreateFoundPoster(ctx) {
+            // let imgSrc = ctx.params.base64Image;
+            let petType = ctx.params.petType;
+            let petBreed = ctx.params.petBreed;
+            let petGender = ctx.params.petGender;
+            let petInformation = ctx.params.petInformation;
+            let petLostLat = ctx.params.lat;
+            let petLostLng = ctx.params.lng;
+            let petLostRadius = ctx.params.rad;
+
+            let lostPetData = {
+                petType,
+                petBreed,
+                petGender,
+                petInformation,
+                petLostLat,
+                petLostLng,
+                petLostRadius
+            };
+
+            requester.post("appdata", "foundPets", "kinvey", lostPetData)
+                .then(function () {
+                    auth.showInfo('Created Lost Pet Poster!');
+                    displayHome(ctx);
+                })
+                .catch(auth.handleError);
+        }
+
+        function postCreateLostPoster(ctx) {
+
+            let petName = ctx.params.petName;
+            // let imgSrc = ctx.params.base64Image;
+            let petType = ctx.params.petType;
+            let petBreed = ctx.params.petBreed;
+            let petGender = ctx.params.petGender;
+            let petInformation = ctx.params.petInformation;
+            let petLostLat = ctx.params.lat;
+            let petLostLng = ctx.params.lng;
+            let petLostRadius = ctx.params.rad;
+
+            let lostPetData = {
+                petName,
+                petType,
+                petBreed,
+                petGender,
+                petInformation,
+                petLostLat,
+                petLostLng,
+                petLostRadius
+            };
+
+            requester.post("appdata", "lostPets", "kinvey", lostPetData)
+                .then(function () {
+                    auth.showInfo('Created Lost Pet Poster!');
+                    displayHome(ctx);
+                })
+                .catch(auth.handleError);
+        }
+
+        function displayCreateLostPoster(ctx) {
+            console.log('create lost!');
+            ctx.loadPartials({
+                userDropDown: '../templates/common/userDropDown.hbs',
+                enterDropDown: '../templates/common/enterDropDown.hbs',
+                header: '../templates/common/header.hbs',
+                footer: '../templates/common/footer.hbs',
+                scrollTop: '../templates/common/scrollTop.hbs',
+                scripts: '../templates/common/scripts.hbs',
+
+                createLostForm: '../templates/createLostPoster/createLostForm.hbs',
+                createLostPosterScript: '../templates/createLostPoster/createLostPosterScript.hbs'
+            }).then(function () {
+                this.partial('../templates/createLostPoster/createLostPage.hbs')
+            })
+        }
+
+        function displayCreateFoundPoster(ctx) {
+            console.log('create found!');
+            ctx.loadPartials({
+                userDropDown: '../templates/common/userDropDown.hbs',
+                enterDropDown: '../templates/common/enterDropDown.hbs',
+                header: '../templates/common/header.hbs',
+                footer: '../templates/common/footer.hbs',
+                scrollTop: '../templates/common/scrollTop.hbs',
+                scripts: '../templates/common/scripts.hbs',
+
+                createFoundForm: '../templates/createFoundPoster/createFoundForm.hbs',
+                createFoundPosterScript: '../templates/createFoundPoster/createFoundPosterScript.hbs'
+            }).then(function () {
+                this.partial('../templates/createFoundPoster/createFoundPage.hbs')
+            })
+        }
 
         function displayExploreFound(ctx) {
 
@@ -375,6 +473,7 @@ $(() => {
                 footer: '../templates/common/footer.hbs',
                 scrollTop: '../templates/common/scrollTop.hbs',
                 scripts: '../templates/common/scripts.hbs',
+                mapScript: '../templates/home/mapScript.hbs',
 
                 welcomeSection: '../templates/home/welcomeSection.hbs',
                 aboutSection: '../templates/home/aboutSection.hbs',
