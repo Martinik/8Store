@@ -1,4 +1,51 @@
 <script>
+    (function () {
+        let dropzone = $(".dropzone");
+        let base64ImageHidden = $("#base64Image");
+
+        function handleFiles(files) {
+            let oldImage = $(".posterImage");
+            let file = files[0];
+            let imageType = /^image\//;
+
+            if (imageType.test(file.type)) {
+                oldImage.remove();
+                let img = document.createElement("img");
+                img.classList.add("posterImage");
+                img.setAttribute("name", "petImage");
+                img.file = file;
+                dropzone.append(img); // Assuming that "preview" is the div output where the content will be displayed.
+
+                let reader = new FileReader();
+                reader.onload = (function(aImg) {
+                    return function(e) {
+                        aImg.src = e.target.result;
+                        base64ImageHidden.val(e.target.result);
+                    };
+                })(img);
+                reader.readAsDataURL(file);
+            }
+        }
+
+        dropzone.on("drop", function (event) {
+            event.preventDefault();
+            this.className = 'dropzone';
+            let files = event.originalEvent.dataTransfer.files;
+            handleFiles(files);
+
+        });
+
+        dropzone.on("dragover", function () {
+            this.className = 'dropzone dragover';
+            return false;
+        });
+
+        dropzone.on("dragleave", function () {
+            this.className = 'dropzone';
+            return false;
+        });
+    })();
+
 
     //Set up some of our variables.
     let map; //Will contain map object.
@@ -90,52 +137,4 @@
     //Load the map when the page has finished loading.
     google.maps.event.addDomListener(window, 'load', initMap);
     console.log("load map")
-
-
-    (function () {
-        let dropzone = $(".dropzone");
-        let base64ImageHidden = $("#base64Image");
-
-        function handleFiles(files) {
-            let oldImage = $(".posterImage");
-            let file = files[0];
-            let imageType = /^image\//;
-
-            if (imageType.test(file.type)) {
-                oldImage.remove();
-                let img = document.createElement("img");
-                img.classList.add("posterImage");
-                img.setAttribute("name", "petImage");
-                img.file = file;
-                dropzone.append(img); // Assuming that "preview" is the div output where the content will be displayed.
-
-                let reader = new FileReader();
-                reader.onload = (function(aImg) {
-                    return function(e) {
-                        aImg.src = e.target.result;
-                        base64ImageHidden.val(e.target.result);
-                    };
-                })(img);
-                reader.readAsDataURL(file);
-            }
-        }
-
-        dropzone.on("drop", function (event) {
-            event.preventDefault();
-            this.className = 'dropzone';
-            let files = event.originalEvent.dataTransfer.files;
-            handleFiles(files);
-
-        });
-
-        dropzone.on("dragover", function () {
-            this.className = 'dropzone dragover';
-            return false;
-        });
-
-        dropzone.on("dragleave", function () {
-            this.className = 'dropzone';
-            return false;
-        });
-    })();
 </script>

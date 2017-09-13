@@ -43,9 +43,36 @@ $(() => {
         $("#editProfile").click(editUserInfo);
         this.get('#/userProfile', displayUserProfile);
 
-
+        //Pet Details
+        this.get('#/petDetails/lost/:petId', displayLostPetDetails);
+        this.get('#/petDetails/found/:petId', displayFoundPetDetails);
 
         // functions
+
+        function displayLostPetDetails(ctx) {
+            petsService.getLostPetById(ctx.params.petId).then(function (petData) {
+                    ctx.pets = petData;
+                console.log(petData);
+                // ctx.loadPartials({
+                    //     userDropDown: '../templates/common/userDropDown.hbs',
+                    //     enterDropDown: '../templates/common/enterDropDown.hbs',
+                    //     header: '../templates/common/header.hbs',
+                    //     footer: '../templates/common/footer.hbs',
+                    //     scrollTop: '../templates/common/scrollTop.hbs',
+                    //     exploreScript: '../templates/explore/exploreScript.hbs',
+                    //
+                    //     petThumbnail: '../templates/explore/petThumbnail.hbs'
+                    //
+                    // }).then(function () {
+                    //     this.partial('../templates/explore/explorePage.hbs')
+                    // }).then(startPageScript)
+                    //     .catch(auth.handleError);
+            })
+        }
+
+        function displayFoundPetDetails(ctx) {
+
+        }
 
         function postCreateFoundPoster(ctx) {
             // let imgSrc = ctx.params.base64Image;
@@ -53,18 +80,18 @@ $(() => {
             let petBreed = ctx.params.petBreed;
             let petGender = ctx.params.petGender;
             let petInformation = ctx.params.petInformation;
-            let petLostLat = ctx.params.lat;
-            let petLostLng = ctx.params.lng;
-            let petLostRadius = ctx.params.rad;
+            let lat = ctx.params.lat;
+            let lng = ctx.params.lng;
+            let radius = ctx.params.rad;
 
             let lostPetData = {
                 petType,
                 petBreed,
                 petGender,
                 petInformation,
-                petLostLat,
-                petLostLng,
-                petLostRadius
+                lat,
+                lng,
+                radius
             };
 
             requester.post("appdata", "foundPets", "kinvey", lostPetData)
@@ -83,9 +110,9 @@ $(() => {
             let petBreed = ctx.params.petBreed;
             let petGender = ctx.params.petGender;
             let petInformation = ctx.params.petInformation;
-            let petLostLat = ctx.params.lat;
-            let petLostLng = ctx.params.lng;
-            let petLostRadius = ctx.params.rad;
+            let lat = ctx.params.lat;
+            let lng = ctx.params.lng;
+            let radius = ctx.params.rad;
 
             let lostPetData = {
                 petName,
@@ -93,9 +120,9 @@ $(() => {
                 petBreed,
                 petGender,
                 petInformation,
-                petLostLat,
-                petLostLng,
-                petLostRadius
+                lat,
+                lng,
+                radius
             };
 
             requester.post("appdata", "lostPets", "kinvey", lostPetData)
@@ -107,7 +134,6 @@ $(() => {
         }
 
         function displayCreateLostPoster(ctx) {
-            console.log('create lost!');
             ctx.loadPartials({
                 userDropDown: '../templates/common/userDropDown.hbs',
                 enterDropDown: '../templates/common/enterDropDown.hbs',
@@ -124,7 +150,6 @@ $(() => {
         }
 
         function displayCreateFoundPoster(ctx) {
-            console.log('create found!');
             ctx.loadPartials({
                 userDropDown: '../templates/common/userDropDown.hbs',
                 enterDropDown: '../templates/common/enterDropDown.hbs',
@@ -143,9 +168,6 @@ $(() => {
         function displayExploreFound(ctx) {
 
             $(`#loadingBox`).show();
-
-
-            console.log('explore found routed!');
 
             ctx.loggedIn = sessionStorage.getItem('authtoken') !== null;
             ctx.username = sessionStorage.getItem('username');
@@ -185,7 +207,6 @@ $(() => {
         }
 
         function displayExploreLost(ctx) {
-            console.log('explore lost routed!');
 
             $(`#loadingBox`).show();
 
@@ -230,8 +251,6 @@ $(() => {
 
             $(`#loadingBox`).show();
 
-            console.log('explore routed!');
-
             let searchPetType = 'all';
 
             ctx.loggedIn = sessionStorage.getItem('authtoken') !== null;
@@ -251,9 +270,6 @@ $(() => {
                     allPets.push.apply(allPets, lostPets);
                     allPets.push.apply(allPets, foundPets);
 
-                    console.log('ALL PETS');
-                    console.log(allPets);
-
                     allPets.sort(function(a, b) {
                         return (b._kmd.ect) - (a._kmd.ect);
                     });
@@ -266,7 +282,7 @@ $(() => {
                         header: '../templates/common/header.hbs',
                         footer: '../templates/common/footer.hbs',
                         scrollTop: '../templates/common/scrollTop.hbs',
-                        scripts: '../templates/common/scripts.hbs',
+                        exploreScript: '../templates/explore/exploreScript.hbs',
 
                         petThumbnail: '../templates/explore/petThumbnail.hbs'
 
@@ -295,7 +311,6 @@ $(() => {
 
 
         function logoutUser(ctx) {
-            console.log('logout routed!');
             auth.logout()
                 .then(function () {
                     sessionStorage.clear();
@@ -306,7 +321,6 @@ $(() => {
         }
 
         function postLogin(ctx) {
-            console.log('post login routed!');
 
             let username = ctx.params.username;
             let password = ctx.params.password;
@@ -345,7 +359,6 @@ $(() => {
         }
 
         function displayRegister(ctx) {
-            console.log('register routed!');
             ctx.loggedIn = sessionStorage.getItem('authtoken') !== null;
             ctx.username = sessionStorage.getItem('username');
             ctx.firstName = sessionStorage.getItem('firstName');
@@ -368,7 +381,6 @@ $(() => {
         }
 
         function displayLogin(ctx) {
-            console.log('login routed!');
             ctx.loggedIn = sessionStorage.getItem('authtoken') !== null;
             ctx.username = sessionStorage.getItem('username');
             ctx.firstName = sessionStorage.getItem('firstName');
@@ -402,8 +414,6 @@ $(() => {
         function displayUserProfile (ctx){
             $(`#loadingBox`).show();
 
-            console.log('user profile routed');
-
             ctx.loggedIn = sessionStorage.getItem('authtoken') !== null;
             ctx.username = sessionStorage.getItem('username');
             ctx.firstName = sessionStorage.getItem('firstName');
@@ -422,7 +432,6 @@ $(() => {
 
         }
         function displayHome(ctx) {
-            console.log('home page routed!');
             ctx.loggedIn = sessionStorage.getItem('authtoken') !== null;
             ctx.username = sessionStorage.getItem('username');
             ctx.firstName = sessionStorage.getItem('firstName');
