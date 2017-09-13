@@ -12,6 +12,16 @@ let auth = (() => {
         sessionStorage.setItem('lastName', lastName);
         let email = userInfo.email;
         sessionStorage.setItem('email', email);
+        let address = userInfo.address;
+        sessionStorage.setItem('address', address);
+        let facebook = userInfo.facebook;
+        sessionStorage.setItem('facebook', facebook);
+        let phone = userInfo.phone;
+        sessionStorage.setItem('phone', phone);
+        let twitter = userInfo.twitter;
+        sessionStorage.setItem('twitter', twitter);
+        let skype = userInfo.skype;
+        sessionStorage.setItem('skype', skype);
 
     }
 
