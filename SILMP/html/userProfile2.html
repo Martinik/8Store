@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Shit I Lost My Pet</title>
+    <link rel="icon" href="../img/logo/bone-tab.png">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <!-- Favicon -->
+    <link href="../img/favicon.ico" rel="icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,700|Roboto:400,900" rel="stylesheet">
+
+    <!-- Bootstrap CSS File -->
+    <link href="../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Libraries CSS Files -->
+    <link href="../lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Main Stylesheet File -->
+
+
+    <link href="../css/style.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.1.0/css/bulma.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/profile.css">
+
+    <!--profile custom style-->
+
+
+</head>
+<body>
+
+<!-- Header -->
+<header id="header">
+    <div class="container">
+
+        <div id="logo" class="pull-left">
+            <a href="OLDindex.html"><img src="../img/logo/bone-small.png" alt="" title=""/></img></a>
+            <!-- Uncomment below if you prefer to use a text image -->
+            <!--<h1><a href="#hero">Bell</a></h1>-->
+        </div>
+
+        <nav id="nav-menu-container">
+            <ul class="nav-menu">
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#features">Map</a></li>
+                <li><a href="#lostPets">Lost Pets</a></li>
+                <li><a href="#foundPets">Found Pets</a></li>
+                <li class="menu-has-children"><a href="#">Create a Poster</a>
+                    <ul>
+                        <li><a href="#">Lost Pet</a></li>
+                        <li><a href="#">Found Pet</a></li>
+                    </ul>
+                </li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+
+
+        </nav><!-- #nav-menu-container -->
+
+
+        <nav class="nav social-nav pull-right hidden-sm-down">
+            <!--<a href="#"><i class="fa fa-twitter"></i></a> <a href="#"><i class="fa fa-facebook"></i></a> <a href="#"><i class="fa fa-linkedin"></i></a> <a href="#"><i class="fa fa-envelope"></i></a>-->
+            <ul class="nav pull-right">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <span class="glyphicon glyphicon-user"></span> 
+                        {DisplayName}
+                        <span class="glyphicon glyphicon-chevron-down"></span>
+                    </a>
+                    <ul class="dropdown-menu user-dropdown">
+                        <li>
+
+                            <div class="col-lg-12"><p><strong>Full Name</strong></p></div>
+
+                        </li>
+                        <li>
+
+                            <div class="col-lg-12"><p>placeholder@gmail.com</p></div>
+
+                        </li>
+                        <li>
+
+                            <button id="navbar-dashboard-btn" type="button" class="btn btn-success col-lg-12">
+                                Dashboard
+                            </button>
+
+
+                        </li>
+
+                        <li>
+
+                            <button id="navbar-logout-btn" type="button"
+                                    class="btn btn-danger col-lg-12 navbar-user-btn">Logout
+                            </button>
+
+                        </li>
+
+                    </ul>
+                </li>
+            </ul>
+
+
+        </nav>
+
+
+    </div>
+</header><!-- #header -->
+
+<!--profile section-->
+<section id="userProfile">
+
+    <div class="container profile">
+
+        <div class="section profile-heading">
+            <div class="columns">
+                <div class="column is-2">
+                    <div class="image is-128x128 avatar">
+                        <img src="https://placehold.it/256x256">
+                    </div>
+                </div>
+                <div class="column is-4 name">
+                    <p>
+                        <span class="title is-bold">John Smith</span>
+                        <span class="button is-primary is-outlined follow">Follow</span>
+                    </p>
+                    <p class="tagline">example@gmail.com</p>
+                </div>
+                <div class="column is-2 followers has-text-centered">
+                    <div class="stat-val social-logo"><img
+                            src="https://cdn4.iconfinder.com/data/icons/miu-gloss-social/60/facebook-512.png"
+                            alt="facebook"></div>
+                    <p class="stat-key">Facebook</p>
+                </div>
+                <div class="column is-2 following has-text-centered">
+                    <div class="stat-val social-logo"><img
+                            src="http://icons.iconarchive.com/icons/dtafalonso/ios7-desktop/256/Skype-icon.png"
+                            alt="skype"></div>
+                    <p class="stat-key">Skype</p>
+                </div>
+                <div class="column is-2 likes has-text-centered">
+                    <div class="stat-val social-logo"><img
+                            src="https://cdn4.iconfinder.com/data/icons/iconsimple-logotypes/512/twitter-128.png"
+                            alt="twitter"></div>
+                    <p class="stat-key">Twitter</p>
+                </div>
+            </div>
+        </div>
+        <div class="profile-options">
+            <div class="tabs is-fullwidth">
+                <ul>
+                    <!--<li class="link is-active"><a><span class="icon"><i class="fa fa-list"></i></span>-->
+                        <!--<span>My Lists</span></a></li>-->
+                    <!--<li class="link"><a><span class="icon"><i class="fa fa-heart"></i></span> <span>My Likes</span></a>-->
+                    <!--</li>-->
+                    <!--<li class="link"><a><span class="icon"><i class="fa fa-th"></i></span> <span>My Posts</span></a>-->
+                    <!--</li>-->
+                    <!--<li class="link"><a><span class="icon"><i class="fa fa-bookmark"></i></span>-->
+                        <!--<span>My Bookmarks</span></a></li>-->
+                </ul>
+            </div>
+        </div>
+
+        <div class="box">
+            <!-- Main container -->
+            <nav class="level">
+                <!-- Left side -->
+                <!--<div class="level-left">-->
+                <!--<div class="level-item">-->
+                <!--<p class="subtitle is-5">-->
+                <!--<strong>123</strong> posts-->
+                <!--</p>-->
+                <!--</div>-->
+                <!--<div class="level-item">-->
+                <!--<p class="control has-addons">-->
+                <!--<input class="input" type="text" placeholder="Find a post">-->
+                <!--<button class="button">-->
+                <!--Search-->
+                <!--</button>-->
+                <!--</p>-->
+                <!--</div>-->
+                <!--</div>-->
+
+                <div>
+                    <h1>-Posted by You-</h1>
+                </div>
+
+                <!-- Right side -->
+                <!--<div class="level-right">-->
+                <!--<p class="level-item"><strong>All</strong></p>-->
+                <!--<p class="level-item"><a>Published</a></p>-->
+                <!--<p class="level-item"><a>Drafts</a></p>-->
+                <!--<p class="level-item"><a>Deleted</a></p>-->
+                <!--<p class="level-item"><a class="button is-success">New</a></p>-->
+                <!--</div>-->
+            </nav>
+        </div>
+
+        <div class="spacer"></div>
+
+        <!--<div class="columns">-->
+            <!--<div class="column is-3">-->
+                <!---->
+            <!--</div>-->
+        <div>
+
+            <div class="card">
+                <div class="card-image">
+                    <figure class="image is-4by3">
+                        <img src="http://placehold.it/300x225" alt="">
+                    </figure>
+                </div>
+                <div class="card-content">
+                    <div class="content">
+                        <span class="tag is-dark">{{breed}}</span>
+                        <!--<strong class="timestamp">2 d</strong>-->
+                    </div>
+                </div>
+                <footer class="card-footer">
+                    <a class="card-footer-item">View</a>
+                    <a class="card-footer-item">Edit</a>
+                    <a class="card-footer-item">Delete</a>
+                </footer>
+            </div>
+
+            <div class="card">
+                <div class="card-image">
+                    <figure class="image is-4by3">
+                        <img src="http://placehold.it/300x225" alt="">
+                    </figure>
+                </div>
+                <div class="card-content">
+                    <div class="content">
+                        <span class="tag is-dark">{{breed}}</span>
+                        <!--<strong class="timestamp">2 d</strong>-->
+                    </div>
+                </div>
+                <footer class="card-footer">
+                    <a class="card-footer-item">View</a>
+                    <a class="card-footer-item">Edit</a>
+                    <a class="card-footer-item">Delete</a>
+                </footer>
+            </div>
+
+
+            <div class="card">
+                <div class="card-image">
+                    <figure class="image is-4by3">
+                        <img src="http://placehold.it/300x225" alt="">
+                    </figure>
+                </div>
+                <div class="card-content">
+                    <div class="content">
+                        <span class="tag is-dark">{{breed}}</span>
+                        <!--<strong class="timestamp">2 d</strong>-->
+                    </div>
+                </div>
+                <footer class="card-footer">
+                    <a class="card-footer-item">View</a>
+                    <a class="card-footer-item">Edit</a>
+                    <a class="card-footer-item">Delete</a>
+                </footer>
+            </div>
+
+
+
+        </div>
+
+
+            <!---->
+            <!--<div class="column is-3">-->
+                <!--<div class="card">-->
+                    <!--<div class="card-image">-->
+                        <!--<figure class="image is-4by3">-->
+                            <!--<img src="http://placehold.it/300x225" alt="">-->
+                        <!--</figure>-->
+                    <!--</div>-->
+                    <!--<div class="card-content">-->
+                        <!--<div class="content">-->
+                            <!--<span class="tag is-dark">#webdev</span>-->
+                            <!--<strong class="timestamp">2 d</strong>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<footer class="card-footer">-->
+                        <!--<a class="card-footer-item">Save</a>-->
+                        <!--<a class="card-footer-item">Edit</a>-->
+                        <!--<a class="card-footer-item">Delete</a>-->
+                    <!--</footer>-->
+                <!--</div>-->
+                <!--<br>-->
+                <!--<div class="card">-->
+                    <!--<div class="card-image">-->
+                        <!--<figure class="image is-4by3">-->
+                            <!--<img src="http://placehold.it/300x225" alt="">-->
+                        <!--</figure>-->
+                    <!--</div>-->
+                    <!--<div class="card-content">-->
+                        <!--<div class="content">-->
+                            <!--<span class="tag is-dark">#webdev</span>-->
+                            <!--<strong class="timestamp">2 d</strong>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<footer class="card-footer">-->
+                        <!--<a class="card-footer-item">Save</a>-->
+                        <!--<a class="card-footer-item">Edit</a>-->
+                        <!--<a class="card-footer-item">Delete</a>-->
+                    <!--</footer>-->
+                <!--</div>-->
+                <!--<br>-->
+                <!--<div class="card">-->
+                    <!--<div class="card-image">-->
+                        <!--<figure class="image is-4by3">-->
+                            <!--<img src="http://placehold.it/300x225" alt="">-->
+                        <!--</figure>-->
+                    <!--</div>-->
+                    <!--<div class="card-content">-->
+                        <!--<div class="content">-->
+                            <!--<span class="tag is-dark">#webdev</span>-->
+                            <!--<strong class="timestamp">2 d</strong>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<footer class="card-footer">-->
+                        <!--<a class="card-footer-item">Save</a>-->
+                        <!--<a class="card-footer-item">Edit</a>-->
+                        <!--<a class="card-footer-item">Delete</a>-->
+                    <!--</footer>-->
+                <!--</div>-->
+                <!--<br>-->
+                <!--<div class="card">-->
+                    <!--<div class="card-image">-->
+                        <!--<figure class="image is-4by3">-->
+                            <!--<img src="http://placehold.it/300x225" alt="">-->
+                        <!--</figure>-->
+                    <!--</div>-->
+                    <!--<div class="card-content">-->
+                        <!--<div class="content">-->
+                            <!--<span class="tag is-dark">#webdev</span>-->
+                            <!--<strong class="timestamp">2 d</strong>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<footer class="card-footer">-->
+                        <!--<a class="card-footer-item">Save</a>-->
+                        <!--<a class="card-footer-item">Edit</a>-->
+                        <!--<a class="card-footer-item">Delete</a>-->
+                    <!--</footer>-->
+                <!--</div>-->
+                <!--<br>-->
+                <!--<div class="card">-->
+                    <!--<div class="card-image">-->
+                        <!--<figure class="image is-4by3">-->
+                            <!--<img src="http://placehold.it/300x225" alt="">-->
+                        <!--</figure>-->
+                    <!--</div>-->
+                    <!--<div class="card-content">-->
+                        <!--<div class="content">-->
+                            <!--<span class="tag is-dark">#webdev</span>-->
+                            <!--<strong class="timestamp">2 d</strong>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<footer class="card-footer">-->
+                        <!--<a class="card-footer-item">Save</a>-->
+                        <!--<a class="card-footer-item">Edit</a>-->
+                        <!--<a class="card-footer-item">Delete</a>-->
+                    <!--</footer>-->
+                <!--</div>-->
+                <!--<br>-->
+            <!--</div>-->
+            <!--<div class="column is-3">-->
+                <!--<div class="card">-->
+                    <!--<div class="card-image">-->
+                        <!--<figure class="image is-4by3">-->
+                            <!--<img src="http://placehold.it/300x225" alt="">-->
+                        <!--</figure>-->
+                    <!--</div>-->
+                    <!--<div class="card-content">-->
+                        <!--<div class="content">-->
+                            <!--<span class="tag is-dark">#webdev</span>-->
+                            <!--<strong class="timestamp">2 d</strong>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<footer class="card-footer">-->
+                        <!--<a class="card-footer-item">Save</a>-->
+                        <!--<a class="card-footer-item">Edit</a>-->
+                        <!--<a class="card-footer-item">Delete</a>-->
+                    <!--</footer>-->
+                <!--</div>-->
+                <!--<br>-->
+                <!--<div class="card">-->
+                    <!--<div class="card-image">-->
+                        <!--<figure class="image is-4by3">-->
+                            <!--<img src="http://placehold.it/300x225" alt="">-->
+                        <!--</figure>-->
+                    <!--</div>-->
+                    <!--<div class="card-content">-->
+                        <!--<div class="content">-->
+                            <!--<span class="tag is-dark">#webdev</span>-->
+                            <!--<strong class="timestamp">2 d</strong>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<footer class="card-footer">-->
+                        <!--<a class="card-footer-item">Save</a>-->
+                        <!--<a class="card-footer-item">Edit</a>-->
+                        <!--<a class="card-footer-item">Delete</a>-->
+                    <!--</footer>-->
+                <!--</div>-->
+                <!--<br>-->
+                <!--<div class="card">-->
+                    <!--<div class="card-image">-->
+                        <!--<figure class="image is-4by3">-->
+                            <!--<img src="http://placehold.it/300x225" alt="">-->
+                        <!--</figure>-->
+                    <!--</div>-->
+                    <!--<div class="card-content">-->
+                        <!--<div class="content">-->
+                            <!--<span class="tag is-dark">#webdev</span>-->
+                            <!--<strong class="timestamp">2 d</strong>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<footer class="card-footer">-->
+                        <!--<a class="card-footer-item">Save</a>-->
+                        <!--<a class="card-footer-item">Edit</a>-->
+                        <!--<a class="card-footer-item">Delete</a>-->
+                    <!--</footer>-->
+                <!--</div>-->
+                <!--<br>-->
+                <!--<div class="card">-->
+                    <!--<div class="card-image">-->
+                        <!--<figure class="image is-4by3">-->
+                            <!--<img src="http://placehold.it/300x225" alt="">-->
+                        <!--</figure>-->
+                    <!--</div>-->
+                    <!--<div class="card-content">-->
+                        <!--<div class="content">-->
+                            <!--<span class="tag is-dark">#webdev</span>-->
+                            <!--<strong class="timestamp">2 d</strong>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<footer class="card-footer">-->
+                        <!--<a class="card-footer-item">Save</a>-->
+                        <!--<a class="card-footer-item">Edit</a>-->
+                        <!--<a class="card-footer-item">Delete</a>-->
+                    <!--</footer>-->
+                <!--</div>-->
+                <!--<br>-->
+                <!--<div class="card">-->
+                    <!--<div class="card-image">-->
+                        <!--<figure class="image is-4by3">-->
+                            <!--<img src="http://placehold.it/300x225" alt="">-->
+                        <!--</figure>-->
+                    <!--</div>-->
+                    <!--<div class="card-content">-->
+                        <!--<div class="content">-->
+                            <!--<span class="tag is-dark">#webdev</span>-->
+                            <!--<strong class="timestamp">2 d</strong>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<footer class="card-footer">-->
+                        <!--<a class="card-footer-item">Save</a>-->
+                        <!--<a class="card-footer-item">Edit</a>-->
+                        <!--<a class="card-footer-item">Delete</a>-->
+                    <!--</footer>-->
+                <!--</div>-->
+                <!--<br>-->
+            <!--</div>-->
+            <!--<div class="column is-3">-->
+                <!--<div class="card">-->
+                    <!--<div class="card-image">-->
+                        <!--<figure class="image is-4by3">-->
+                            <!--<img src="http://placehold.it/300x225" alt="">-->
+                        <!--</figure>-->
+                    <!--</div>-->
+                    <!--<div class="card-content">-->
+                        <!--<div class="content">-->
+                            <!--<span class="tag is-dark">#webdev</span>-->
+                            <!--<strong class="timestamp">2 d</strong>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<footer class="card-footer">-->
+                        <!--<a class="card-footer-item">Save</a>-->
+                        <!--<a class="card-footer-item">Edit</a>-->
+                        <!--<a class="card-footer-item">Delete</a>-->
+                    <!--</footer>-->
+                <!--</div>-->
+                <!--<br>-->
+                <!--<div class="card">-->
+                    <!--<div class="card-image">-->
+                        <!--<figure class="image is-4by3">-->
+                            <!--<img src="http://placehold.it/300x225" alt="">-->
+                        <!--</figure>-->
+                    <!--</div>-->
+                    <!--<div class="card-content">-->
+                        <!--<div class="content">-->
+                            <!--<span class="tag is-dark">#webdev</span>-->
+                            <!--<strong class="timestamp">2 d</strong>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<footer class="card-footer">-->
+                        <!--<a class="card-footer-item">Save</a>-->
+                        <!--<a class="card-footer-item">Edit</a>-->
+                        <!--<a class="card-footer-item">Delete</a>-->
+                    <!--</footer>-->
+                <!--</div>-->
+                <!--<br>-->
+                <!--<div class="card">-->
+                    <!--<div class="card-image">-->
+                        <!--<figure class="image is-4by3">-->
+                            <!--<img src="http://placehold.it/300x225" alt="">-->
+                        <!--</figure>-->
+                    <!--</div>-->
+                    <!--<div class="card-content">-->
+                        <!--<div class="content">-->
+                            <!--<span class="tag is-dark">#webdev</span>-->
+                            <!--<strong class="timestamp">2 d</strong>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<footer class="card-footer">-->
+                        <!--<a class="card-footer-item">Save</a>-->
+                        <!--<a class="card-footer-item">Edit</a>-->
+                        <!--<a class="card-footer-item">Delete</a>-->
+                    <!--</footer>-->
+                <!--</div>-->
+                <!--<br>-->
+                <!--<div class="card">-->
+                    <!--<div class="card-image">-->
+                        <!--<figure class="image is-4by3">-->
+                            <!--<img src="http://placehold.it/300x225" alt="">-->
+                        <!--</figure>-->
+                    <!--</div>-->
+                    <!--<div class="card-content">-->
+                        <!--<div class="content">-->
+                            <!--<span class="tag is-dark">#webdev</span>-->
+                            <!--<strong class="timestamp">2 d</strong>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<footer class="card-footer">-->
+                        <!--<a class="card-footer-item">Save</a>-->
+                        <!--<a class="card-footer-item">Edit</a>-->
+                        <!--<a class="card-footer-item">Delete</a>-->
+                    <!--</footer>-->
+                <!--</div>-->
+                <!--<br>-->
+                <!--<div class="card">-->
+                    <!--<div class="card-image">-->
+                        <!--<figure class="image is-4by3">-->
+                            <!--<img src="http://placehold.it/300x225" alt="">-->
+                        <!--</figure>-->
+                    <!--</div>-->
+                    <!--<div class="card-content">-->
+                        <!--<div class="content">-->
+                            <!--<span class="tag is-dark">#webdev</span>-->
+                            <!--<strong class="timestamp">2 d</strong>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<footer class="card-footer">-->
+                        <!--<a class="card-footer-item">Save</a>-->
+                        <!--<a class="card-footer-item">Edit</a>-->
+                        <!--<a class="card-footer-item">Delete</a>-->
+                    <!--</footer>-->
+                <!--</div>-->
+                <!--<br>-->
+            <!--</div>-->
+
+        <!--</div>-->
+    </div>
+
+</section>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+<!--footer-->
+<footer class="site-footer">
+    <div class="bottom">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-6 col-xs-12 text-lg-left text-center">
+                    <p class="copyright-text">
+                        © BELL Theme
+                    </p>
+                    <div class="credits">
+                        <!--
+                        All the links in the footer should remain intact.
+                        You can delete the links only if you purchased the pro version.
+                        Licensing information: https://bootstrapmade.com/license/
+                        Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Bell
+                      -->
+                        <a href="https://bootstrapmade.com/">Bootstrap Themes</a> by BootstrapMade
+                    </div>
+                </div>
+
+                <div class="col-lg-6 col-xs-12 text-lg-right text-center">
+                    <ul class="list-inline">
+                        <li class="list-inline-item">
+                            <a href="OLDindex.html">Home</a>
+                        </li>
+
+                        <li class="list-inline-item">
+                            <a href="#about">About Us</a>
+                        </li>
+
+                        <li class="list-inline-item">
+                            <a href="#features">Features</a>
+                        </li>
+
+                        <li class="list-inline-item">
+                            <a href="#portfolio">Portfolio</a>
+                        </li>
+
+                        <li class="list-inline-item">
+                            <a href="#team">Team</a>
+                        </li>
+
+                        <li class="list-inline-item">
+                            <a href="#contact">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</footer>
+<a class="scrolltop" href="#"><span class="fa fa-angle-up"></span></a> <!-- JavaScript
+
+<!-- Required JavaScript Libraries -->
+<script src="../lib/jquery/jquery.min.js"></script>
+<script src="../lib/superfish/hoverIntent.js"></script>
+<script src="../lib/superfish/superfish.min.js"></script>
+<script src="../lib/tether/js/tether.min.js"></script>
+<script src="../lib/stellar/stellar.min.js"></script>
+<script src="../lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="../lib/counterup/counterup.min.js"></script>
+<script src="../lib/waypoints/waypoints.min.js"></script>
+<script src="../lib/easing/easing.js"></script>
+<script src="../lib/stickyjs/sticky.js"></script>
+<script src="../lib/parallax/parallax.js"></script>
+<script src="../lib/lockfixed/lockfixed.min.js"></script>
+
+<!-- Template Specisifc Custom Javascript File -->
+<script src="../js/custom.js"></script>
+</body>
+</html>

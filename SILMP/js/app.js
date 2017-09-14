@@ -49,6 +49,8 @@ $(() => {
         this.get('#/petDetails/found/:petId', displayFoundPetDetails);
 
 
+
+
         // functions
 
         function displayLostPetDetails(ctx) {
@@ -470,15 +472,43 @@ $(() => {
             ctx.lastName = sessionStorage.getItem('lastName');
             ctx.email = sessionStorage.getItem('email');
 
-            ctx.loadPartials({
-                userDropDown: '../templates/common/userDropDown.hbs',
-                enterDropDown: '../templates/common/enterDropDown.hbs',
-                header: '../templates/common/header.hbs',
-                footer: '../templates/common/footer.hbs',
-                scrollTop: '../templates/common/scrollTop.hbs',
-            }).then(function () {
-                this.partial('../templates/home/userProfilePage.hbs')
-            }).catch(auth.handleError);
+            usersService.getLoggedUser().then(function (userData) {
+                usersService.getUserLostPets(userData._id).then(function (lostPetsData) {
+                    usersService.getUserFoundPets(userData._id).then(function (foundPetsData) {
+                        let allPets = [];
+                        allPets.push.apply(allPets, lostPetsData);
+                        allPets.push.apply(allPets, foundPetsData);
+                        ctx.pets = allPets;
+                        ctx.facebook = userData.facebook;
+                        ctx.skype = userData.skype;
+                        ctx.twitter = userData.twitter;
+
+
+                        ctx.loadPartials({
+                            userDropDown: '../templates/common/userDropDown.hbs',
+                            enterDropDown: '../templates/common/enterDropDown.hbs',
+                            header: '../templates/common/header.hbs',
+                            footer: '../templates/common/footer.hbs',
+                            scrollTop: '../templates/common/scrollTop.hbs',
+
+
+                            userBlock: '../templates/userProfile/userBlock.hbs',
+                            petCard: '../templates/userProfile/petCard.hbs'
+                        }).then(function () {
+                            this.partial('../templates/userProfile/userProfilePage.hbs').then(function () {
+                                $(`#loadingBox`).hide();
+                            })
+                        })
+
+
+
+                    })
+                })
+            })
+
+
+
+
 
         }
 

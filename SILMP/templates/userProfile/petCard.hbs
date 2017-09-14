@@ -1,0 +1,26 @@
+
+<div class="card">
+    <div class="card-image">
+        <figure class="image is-4by3">
+            <img src="{{thumbnailURL}}" alt="petThumbnail">
+        </figure>
+    </div>
+    <div class="card-content">
+        <div class="content">
+            <span class="tag is-dark">{{petBreed}}</span>
+            <!--<strong class="timestamp">2 d</strong>-->
+        </div>
+    </div>
+    <footer class="card-footer">
+        {{#if petName}}
+            <a href="#/view/lost/{{_id}}" class="card-footer-item">View</a>
+            <a href="#/edit/lost/{{_id}}" class="card-footer-item">Edit</a>
+            <a href="#/delete/lost/{{_id}}" class="card-footer-item">Delete</a>
+        {{else}}
+            <a href="#/view/found/{{_id}}" class="card-footer-item">View</a>
+            <a href="#/edit/found/{{_id}}" class="card-footer-item">Edit</a>
+            <a href="#/delete/found/{{_id}}" class="card-footer-item">Delete</a>
+        {{/if}}
+
+    </footer>
+</div>
