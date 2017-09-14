@@ -105,10 +105,33 @@ let requester = (() => {
             }
         )
     }
+
+    function download(element_id) {
+        requestURL = kinveyBaseUrl + 'blob/' + kinveyAppKey + '/' + element_id;
+
+        let requestHeaders = {
+            'Authorization': 'Basic ' + guestCredentials,
+            'Content-Type': 'application/json'
+        };
+
+        $.ajax({
+            method: 'GET',
+            url: requestURL,
+            headers: requestHeaders
+        }).then(
+            function (success) {
+                let url = success._downloadURL;
+
+               return url;
+            }
+        )
+    }
+
     return {
         get,
         post,
         update,
-        remove
+        remove,
+        download
     }
 })()

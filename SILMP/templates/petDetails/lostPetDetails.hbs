@@ -1,24 +1,29 @@
+
 <div class="col-lg-12">
     <form method="post" action="#/createLostPoster">
-        <h1>This is {{petName}} he is a {{petGender}} {{petBreed}}.</h1>
+        <h1>This is {{petName}}.</h1>
+        <hr/>
+        <h2>Gender: {{petGender}}</h2>
+        <hr/>
+        <h2>Breed: {{petBreed}}</h2>
         <hr/>
         <br/>
         <div>
-            <img name="petImage" class="posterImage">
+            <img src="{{thumbnailURL}}">
             </img>
         </div>
         <br/>
         <div class="form-group">
             <label for="exampleTextarea">Additional information about this pet.</label>
-            <textarea class="form-control" id="exampleTextarea" rows="3" name="petInformation"></textarea>
+            <textarea class="form-control" id="exampleTextarea" rows="3" name="petInformation" readonly>{{petInformation}}</textarea>
         </div>
         <br/>
         <h1>{{petName}} was last seen here.</h1>
+        <input type="hidden" id="lat" value="{{lat}}">
+        <input type="hidden" id="lng" value="{{lng}}">
+        <input type="hidden" id="radius" value="{{radius}}">
         <div id="map" style="width:100%;"></div>
         <br/>
     </form>
     <br/>
 </div>
-<script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDS-RX-iagXzk6sZHXDf-vlNsVN3KXGaE&callback=initMap">
-</script>

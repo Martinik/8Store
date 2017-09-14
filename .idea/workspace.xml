@@ -4,14 +4,15 @@
     <list default="true" id="f60a904e-53e2-4a6b-b158-1aafbd884787" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SILMP/js/app.js" afterPath="$PROJECT_DIR$/SILMP/js/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SILMP/js/models/petsService.js" afterPath="$PROJECT_DIR$/SILMP/js/models/petsService.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SILMP/templates/common/enterDropDown.hbs" afterPath="$PROJECT_DIR$/SILMP/templates/common/enterDropDown.hbs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SILMP/templates/common/userDropDown.hbs" afterPath="$PROJECT_DIR$/SILMP/templates/common/userDropDown.hbs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SILMP/templates/createFoundPoster/createFoundPosterScript.hbs" afterPath="$PROJECT_DIR$/SILMP/templates/createFoundPoster/createFoundPosterScript.hbs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SILMP/templates/createLostPoster/createLostPosterScript.hbs" afterPath="$PROJECT_DIR$/SILMP/templates/createLostPoster/createLostPosterScript.hbs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SILMP/templates/explore/explorePage.hbs" afterPath="$PROJECT_DIR$/SILMP/templates/explore/explorePage.hbs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SILMP/templates/home/mapScript.hbs" afterPath="$PROJECT_DIR$/SILMP/templates/home/mapScript.hbs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SILMP/templates/login/loginForm.hbs" afterPath="$PROJECT_DIR$/SILMP/templates/login/loginForm.hbs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SILMP/js/models/requester.js" afterPath="$PROJECT_DIR$/SILMP/js/models/requester.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SILMP/templates/home/carouselFoundPet.hbs" afterPath="$PROJECT_DIR$/SILMP/templates/home/carouselFoundPet.hbs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SILMP/templates/home/carouselLostPet.hbs" afterPath="$PROJECT_DIR$/SILMP/templates/home/carouselLostPet.hbs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SILMP/templates/home/carousels/carouselImage.hbs" afterPath="$PROJECT_DIR$/SILMP/templates/home/carousels/carouselImage.hbs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SILMP/templates/home/carousels/foundPetsCarousel.hbs" afterPath="$PROJECT_DIR$/SILMP/templates/home/carousels/foundPetsCarousel.hbs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SILMP/templates/home/carousels/lostPetsCarousel.hbs" afterPath="$PROJECT_DIR$/SILMP/templates/home/carousels/lostPetsCarousel.hbs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SILMP/templates/home/foundPetsCarousel.hbs" afterPath="$PROJECT_DIR$/SILMP/templates/home/foundPetsCarousel.hbs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SILMP/templates/petDetails/foundPetDetails.hbs" afterPath="$PROJECT_DIR$/SILMP/templates/petDetails/foundPetDetails.hbs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SILMP/templates/petDetails/lostPetDetails.hbs" afterPath="$PROJECT_DIR$/SILMP/templates/petDetails/lostPetDetails.hbs" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -30,7 +31,7 @@
         <entry file="file://$PROJECT_DIR$/SILMP/html/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="126">
-              <caret line="48" column="76" lean-forward="true" selection-start-line="48" selection-start-column="76" selection-end-line="48" selection-end-column="76" />
+              <caret line="48" column="76" lean-forward="false" selection-start-line="48" selection-start-column="76" selection-end-line="48" selection-end-column="76" />
               <folding />
             </state>
           </provider>
@@ -39,65 +40,10 @@
       <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SILMP/js/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="546">
-              <caret line="68" column="27" lean-forward="true" selection-start-line="55" selection-start-column="29" selection-end-line="68" selection-end-column="27" />
+            <state relative-caret-position="110">
+              <caret line="492" column="0" lean-forward="true" selection-start-line="492" selection-start-column="0" selection-end-line="492" selection-end-column="0" />
               <folding>
-                <element signature="e#16943#35468#0" expanded="false" />
-                <element signature="e#35497#59762#0" expanded="false" />
-                <element signature="e#59915#74772#0" expanded="false" />
-                <element signature="e#74802#77571#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="mapScript.hbs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SILMP/templates/home/mapScript.hbs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-210">
-              <caret line="11" column="51" lean-forward="false" selection-start-line="11" selection-start-column="51" selection-end-line="11" selection-end-column="51" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="loginForm.hbs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SILMP/templates/login/loginForm.hbs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="header.hbs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SILMP/templates/common/header.hbs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="16" column="60" lean-forward="false" selection-start-line="16" selection-start-column="60" selection-end-line="16" selection-end-column="60" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="editPet.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SILMP/html/editPet.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-819">
-              <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="lostPetDetails.hbs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SILMP/templates/petDetails/lostPetDetails.hbs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="8" column="14" lean-forward="true" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
-              <folding>
-                <element signature="n#style#0;n#div#2;n#form#0;n#div#0;n#!!top" expanded="true" />
+                <marker date="1505361520878" expanded="true" signature="235:1295" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -106,20 +52,48 @@
       <file leaf-file-name="foundPetDetails.hbs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SILMP/templates/petDetails/foundPetDetails.hbs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="6" column="14" lean-forward="false" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
-              <folding>
-                <element signature="n#style#0;n#div#1;n#form#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="378">
+              <caret line="18" column="11" lean-forward="false" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="11" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="loginPage.hbs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SILMP/templates/login/loginPage.hbs">
+      <file leaf-file-name="createFoundPosterScript.hbs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SILMP/templates/createFoundPoster/createFoundPosterScript.hbs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="16" column="13" lean-forward="true" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+            <state relative-caret-position="-3087">
+              <caret line="30" column="22" lean-forward="false" selection-start-line="30" selection-start-column="12" selection-end-line="30" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="createLostPosterScript.hbs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SILMP/templates/createLostPoster/createLostPosterScript.hbs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-2121">
+              <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="auth.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SILMP/js/models/auth.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-378">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="lostPetDetails.hbs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SILMP/templates/petDetails/lostPetDetails.hbs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="189">
+              <caret line="9" column="13" lean-forward="true" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -140,7 +114,10 @@
       <find>catch</find>
       <find>displaylos</find>
       <find>console</find>
+      <find>home</find>
       <find>consol</find>
+      <find>conso</find>
+      <find>startpageScrii</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -161,16 +138,28 @@
         <option value="$PROJECT_DIR$/SILMP/templates/createFoundPoster/createFoundPosterScript.hbs" />
         <option value="$PROJECT_DIR$/SILMP/templates/explore/explorePage.hbs" />
         <option value="$PROJECT_DIR$/SILMP/templates/explore/exploreScript.hbs" />
-        <option value="$PROJECT_DIR$/SILMP/templates/home/carouselLostPet.hbs" />
-        <option value="$PROJECT_DIR$/SILMP/templates/home/carousels/carouselImage.hbs" />
         <option value="$PROJECT_DIR$/SILMP/templates/common/enterDropDown.hbs" />
         <option value="$PROJECT_DIR$/SILMP/templates/common/userDropDown.hbs" />
         <option value="$PROJECT_DIR$/SILMP/js/models/petsService.js" />
         <option value="$PROJECT_DIR$/SILMP/templates/petDetails/petDetails.hbs" />
-        <option value="$PROJECT_DIR$/SILMP/templates/petDetails/foundPetDetails.hbs" />
         <option value="$PROJECT_DIR$/SILMP/templates/login/loginForm.hbs" />
         <option value="$PROJECT_DIR$/SILMP/templates/home/mapScript.hbs" />
+        <option value="$PROJECT_DIR$/SILMP/templates/home/carousels/lostPetsCarousel.hbs" />
+        <option value="$PROJECT_DIR$/SILMP/templates/home/carousels/foundPetsCarousel.hbs" />
+        <option value="$PROJECT_DIR$/SILMP/templates/home/carousels/carouselImage.hbs" />
+        <option value="$PROJECT_DIR$/SILMP/templates/home/foundPetsCarousel.hbs" />
+        <option value="$PROJECT_DIR$/SILMP/templates/home/carousels/foundPetsCarouselScript.hbs" />
+        <option value="$PROJECT_DIR$/SILMP/templates/home/carouselLostPet.hbs" />
+        <option value="$PROJECT_DIR$/SILMP/templates/home/carouselFoundPet.hbs" />
+        <option value="$PROJECT_DIR$/SILMP/templates/explore/exploreFoundPage.hbs" />
+        <option value="$PROJECT_DIR$/SILMP/css/petDetails.css" />
+        <option value="$PROJECT_DIR$/SILMP/templates/petDetails/lostPetDetails.hbs" />
+        <option value="$PROJECT_DIR$/SILMP/templates/petDetails/lostDetailsScript.hbs" />
+        <option value="$PROJECT_DIR$/SILMP/templates/petDetails/lostPetDetailsPage.hbs" />
+        <option value="$PROJECT_DIR$/SILMP/templates/petDetails/foundPetDetailsPage.hbs" />
+        <option value="$PROJECT_DIR$/SILMP/templates/petDetails/foundPetDetails.hbs" />
         <option value="$PROJECT_DIR$/SILMP/js/app.js" />
+        <option value="$PROJECT_DIR$/SILMP/js/models/requester.js" />
       </list>
     </option>
   </component>
@@ -288,95 +277,29 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="login" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ShitILostMyPet" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ShitILostMyPet" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SILMP" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="home" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ShitILostMyPet" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ShitILostMyPet" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SILMP" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="explore" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ShitILostMyPet" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ShitILostMyPet" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SILMP" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="editPet" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ShitILostMyPet" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ShitILostMyPet" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SILMP" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="createLostPoster" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ShitILostMyPet" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ShitILostMyPet" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SILMP" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="createFoundPoster" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -434,14 +357,14 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="html" />
+              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -451,7 +374,7 @@
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../JS Core/ShitILostMyPet" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
   </component>
@@ -559,25 +482,26 @@
       <workItem from="1505309974404" duration="1377000" />
       <workItem from="1505313032373" duration="3683000" />
       <workItem from="1505320097048" duration="17247000" />
+      <workItem from="1505344487116" duration="14033000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26598000" />
+    <option name="totallyTimeSpent" value="40631000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16869381" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2728715" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -598,97 +522,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/SILMP/html/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1491">
-          <caret line="71" column="0" lean-forward="true" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SILMP/templates/createFoundPoster/createFoundForm.hbs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SILMP/templates/createLostPoster/createLostForm.hbs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SILMP/templates/common/header.hbs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="16" column="60" lean-forward="false" selection-start-line="16" selection-start-column="60" selection-end-line="16" selection-end-column="60" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SILMP/templates/createLostPoster/createLostPosterScript.hbs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2940">
-          <caret line="140" column="9" lean-forward="false" selection-start-line="140" selection-start-column="9" selection-end-line="140" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SILMP/templates/createFoundPoster/createFoundPosterScript.hbs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SILMP/templates/createFoundPoster/createFoundPage.hbs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SILMP/templates/home/homePage.hbs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="588">
-          <caret line="28" column="13" lean-forward="false" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SILMP/js/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1449">
-          <caret line="69" column="45" lean-forward="false" selection-start-line="69" selection-start-column="45" selection-end-line="69" selection-end-column="45" />
-          <folding>
-            <element signature="e#16943#35468#0" expanded="false" />
-            <element signature="e#35497#59762#0" expanded="false" />
-            <element signature="e#59915#74772#0" expanded="false" />
-            <element signature="e#74802#77571#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SILMP/html/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2688">
-          <caret line="128" column="7" lean-forward="true" selection-start-line="128" selection-start-column="7" selection-end-line="128" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SILMP/css/login-styles.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="798">
-          <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="43" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SILMP/html/register.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3402">
@@ -749,7 +582,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -764,73 +596,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SILMP/templates/createLostPoster/createLostPage.hbs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SILMP/templates/createLostPoster/createLostPosterScript.hbs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="693">
-          <caret line="138" column="27" lean-forward="false" selection-start-line="138" selection-start-column="27" selection-end-line="138" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SILMP/templates/createFoundPoster/createFoundPosterScript.hbs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="42" column="9" lean-forward="false" selection-start-line="42" selection-start-column="9" selection-end-line="42" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SILMP/templates/home/carouselFoundPet.hbs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SILMP/templates/home/foundPetsCarousel.hbs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="19" column="37" lean-forward="false" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SILMP/templates/home/homePage.hbs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="18" column="20" lean-forward="false" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SILMP/templates/home/lostPetsCarousel.hbs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SILMP/templates/home/carouselLostPet.hbs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="2" selection-end-column="6" />
-          <folding>
-            <element signature="n#src#0;n#img#0;n#div#0;n#!!top" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -838,31 +603,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SILMP/templates/home/carousels/lostPetsCarousel.hbs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SILMP/templates/home/carousels/foundPetsCarousel.hbs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SILMP/templates/home/carousels/carouselImage.hbs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -870,15 +610,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-441">
           <caret line="4" column="36" lean-forward="false" selection-start-line="4" selection-start-column="36" selection-end-line="4" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SILMP/templates/createLostPoster/createLostForm.hbs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="72" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -886,7 +617,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="84">
           <caret line="4" column="17" lean-forward="true" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -894,7 +624,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="483">
           <caret line="23" column="9" lean-forward="false" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -908,7 +637,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/SILMP/html/editPet.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-819">
+        <state relative-caret-position="189">
           <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding />
         </state>
@@ -918,7 +647,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="5" column="10" lean-forward="true" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -934,7 +662,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="630">
           <caret line="39" column="10" lean-forward="true" selection-start-line="39" selection-start-column="10" selection-end-line="39" selection-end-column="10" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -943,16 +670,6 @@
         <state relative-caret-position="231">
           <caret line="11" column="12" lean-forward="false" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SILMP/templates/petDetails/lostPetDetails.hbs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="8" column="14" lean-forward="true" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
-          <folding>
-            <element signature="n#style#0;n#div#2;n#form#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -966,19 +683,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/SILMP/templates/home/mapScript.hbs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-210">
+        <state relative-caret-position="231">
           <caret line="11" column="51" lean-forward="false" selection-start-line="11" selection-start-column="51" selection-end-line="11" selection-end-column="51" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SILMP/templates/petDetails/foundPetDetails.hbs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="6" column="14" lean-forward="false" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#form#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -990,23 +697,220 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/SILMP/templates/home/lostPetsCarousel.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="16" column="42" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="28" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SILMP/templates/home/carousels/foundPetsCarousel.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="20" column="41" lean-forward="false" selection-start-line="20" selection-start-column="41" selection-end-line="20" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SILMP/templates/home/carousels/lostPetsCarousel.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="19" column="41" lean-forward="false" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SILMP/templates/home/carousels/carouselImage.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="1" column="51" lean-forward="false" selection-start-line="1" selection-start-column="39" selection-end-line="1" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SILMP/templates/home/homePage.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="672">
+          <caret line="42" column="7" lean-forward="true" selection-start-line="32" selection-start-column="4" selection-end-line="42" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SILMP/templates/home/foundPetsCarousel.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="16" column="40" lean-forward="false" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SILMP/templates/home/carousels/foundPetsCarouselScript.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SILMP/templates/home/carouselLostPet.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="1" column="4" lean-forward="true" selection-start-line="1" selection-start-column="4" selection-end-line="3" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SILMP/templates/home/carouselFoundPet.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="1" column="31" lean-forward="false" selection-start-line="1" selection-start-column="31" selection-end-line="1" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SILMP/css/petDetails.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="2" column="1" lean-forward="false" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SILMP/html/createLostPoster.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SILMP/css/createPoster.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="26" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SILMP/templates/petDetails/lostPetDetailsScript.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SILMP/templates/createLostPoster/createLostPage.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SILMP/templates/explore/exploreFoundPage.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="7" column="23" lean-forward="true" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SILMP/templates/createLostPoster/createLostForm.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-609">
+          <caret line="13" column="49" lean-forward="true" selection-start-line="13" selection-start-column="49" selection-end-line="13" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SILMP/templates/petDetails/petDetailsScript.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="17" column="39" lean-forward="false" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SILMP/templates/petDetails/lostPetDetailsPage.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SILMP/templates/petDetails/foundPetDetailsPage.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SILMP/templates/petDetails/foundPetDetails.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="18" column="11" lean-forward="false" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/SILMP/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="546">
-          <caret line="68" column="27" lean-forward="true" selection-start-line="55" selection-start-column="29" selection-end-line="68" selection-end-column="27" />
+        <state relative-caret-position="110">
+          <caret line="492" column="0" lean-forward="true" selection-start-line="492" selection-start-column="0" selection-end-line="492" selection-end-column="0" />
           <folding>
-            <element signature="e#16943#35468#0" expanded="false" />
-            <element signature="e#35497#59762#0" expanded="false" />
-            <element signature="e#59915#74772#0" expanded="false" />
-            <element signature="e#74802#77571#0" expanded="false" />
+            <marker date="1505361520878" expanded="true" signature="235:1295" ph="{...}" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SILMP/js/models/auth.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-378">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SILMP/templates/createFoundPoster/createFoundPosterScript.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3087">
+          <caret line="30" column="22" lean-forward="false" selection-start-line="30" selection-start-column="12" selection-end-line="30" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SILMP/js/models/requester.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1299">
+          <caret line="134" column="16" lean-forward="false" selection-start-line="134" selection-start-column="16" selection-end-line="134" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SILMP/templates/createLostPoster/createLostPosterScript.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2121">
+          <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SILMP/templates/petDetails/lostPetDetails.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="9" column="13" lean-forward="true" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/SILMP/html/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
-          <caret line="48" column="76" lean-forward="true" selection-start-line="48" selection-start-column="76" selection-end-line="48" selection-end-column="76" />
+          <caret line="48" column="76" lean-forward="false" selection-start-line="48" selection-start-column="76" selection-end-line="48" selection-end-column="76" />
           <folding />
         </state>
       </provider>

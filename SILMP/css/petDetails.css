@@ -1,0 +1,7 @@
+label{
+    font-weight: bold;
+}
+body {
+    background-image: url(../img/animals/background.jpg);
+    background-size: cover;
+}
